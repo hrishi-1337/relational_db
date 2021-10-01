@@ -1,4 +1,4 @@
-
+""" script to create block files from original """
 
 import os
 import shutil
@@ -6,16 +6,17 @@ import pandas as pd
 from sys import exit
 
 BLOCK_SIZE = 10
-build = ['develop'] # either full, develop, or both
-remake = True
+build = ['develop'] # either 'full', 'develop', or both
+remake = True		# to remake all tables
+REPO_PATH = '/Users/wesrobbins/Desktop/fall2021/540/hw1-repo/' # path to repo on coputer
 
-# path to repo on coputer
-REPO_PATH = '/Users/wesrobbins/Desktop/fall2021/540/hw1-repo/'
+# cd into repo
 os.chdir(REPO_PATH+'data')
 
 
 
-
+""" reads in csv files in 'no_block_data' and creates a new directory for each file
+	then writes file to file"""
 def make_blocks(dir):
 	os.chdir(dir)
 
@@ -31,7 +32,7 @@ def make_blocks(dir):
 	for csv in os.listdir('./no_block_data'):
 		table_name = csv[:-4]
 		print(table_name)
-		if not os.path.isdir('./disk'+table_name):
+		if not os.path.isdir('./disk/'+table_name):
 			print("here")
 			os.mkdir('./disk/' + table_name)
 		df = pd.read_csv('./no_block_data/'+csv)
