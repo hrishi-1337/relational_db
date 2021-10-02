@@ -1,15 +1,19 @@
 """ index data structure implementation """
+# Wes Robbins Oct. 2
+
+
 import pandas as pd
 from sys import exit
 from math import ceil
 
+# node of b-tree
 class Node:
     def __init__(self, key,ptr):
-        self.key = key
-        self.ptr = ptr
+        self.key = key              # key
+        self.ptr = ptr              # ptr is a list of child nodes, unless it is leaf, then ptr is a str with block #
 
 class BTree:
-    leaves = []
+    leaves = []                                             # stores leaves for adding horizontal pointers
     def __init__(self, index_file, num_children=10):
         # read in index from file
         self.df = pd.read_csv(index_file,index_col=False)
@@ -29,23 +33,28 @@ class BTree:
         self.add_sideways_ptrs(self.root)
         self.update_ptrs()
 
+    # recursively fill tree from pandas dataframe
     def recursive_fill(self, node, i, j):
+        # i: beginning index
+        # j: end index
+        # node: current node
+
         # base case
         if j-i<=self.num_children:
             iter = i
             while iter < j:
                 data = self.df.loc[iter]
-                new_node = Node(data['Team'], data['ptr'])
-                node.ptr.append(new_node)
+                node.ptr.append(Node(data['Team'], data['ptr']))    # create leaf nodes
                 iter+=1
 
+        # if not leaf node
         else:
             inc = max(ceil((j-i)/self.num_children),self.num_children)
             for idx in range(i,j,inc):
-                new_node = Node(self.df.loc[idx]['Team'],[])
-                self.recursive_fill(new_node,idx, min(idx+inc,j))
+                self.recursive_fill(Node(self.df.loc[idx]['Team'],[]),idx, min(idx+inc,j))
                 node.ptr.append(new_node)
 
+    # recursively add leaf nodes to self.leaves
     def add_sideways_ptrs(self, node):
         if isinstance(node.ptr,str):
             self.leaves.append(node)
@@ -53,6 +62,7 @@ class BTree:
             for n in node.ptr:
                 self.add_sideways_ptrs(n)
 
+    # go through self.leaves and add pointers to next leaf
     def update_ptrs(self):
         leaves = self.leaves
         for i in range(len(leaves)):
@@ -61,14 +71,15 @@ class BTree:
             else:
                 leaves[i].next = leaves[i+1]
 
+    # print ordered data standard way
     def print_tree(self, node, depth):
-        if type(node.ptr) == type(''):
+        if isinstance(node.ptr,str):
             print(depth, node.key, node.ptr)
         else:
-            # print(depth,"INNER:",node.key)
             for child in node.ptr:
                 self.print_tree(child,depth+1)
 
+    # print ordered data using leaf pointers
     def horizontal_print(self):
         temp = self.root
         while not isinstance(temp.ptr, str):
@@ -77,6 +88,7 @@ class BTree:
             print(temp.key,temp.ptr)
             temp = temp.next
 
+    # return depth of tree
     def get_depth(self, node):
         if type(node.ptr) == type(''):
             return 0
@@ -86,6 +98,5 @@ class BTree:
 
 index_file = '../../data/develop/indexes/Team.csv'
 x = BTree(index_file, num_children=10)
-# x.print_tree(x.root,0)
 print(x.get_depth(x.root))
 x.horizontal_print()
