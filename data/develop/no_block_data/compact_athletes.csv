@@ -1,0 +1,190 @@
+,Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
+0,1,A Dijiang,M,24.0,180.0,80.0,China,CHN
+1000,753,Yurie Adachi,F,28.0,156.0,51.0,Japan,JPN
+2000,1498,"Charles Benedict ""Ben"" Ainslie",M,27.0,183.0,90.0,Great Britain,GBR
+3000,2273,Issa Alassane-Oussni,M,27.0,180.0,76.0,Benin,BEN
+4000,2999,Patricio Javier Almonacid Gonzlez,M,28.0,166.0,60.0,Chile,CHI
+5000,3736,Ida Kathrine Andersen (-Berthet),F,24.0,168.0,57.0,Norway,NOR
+6000,4472,Paul Eugne Albert Anspach,M,26.0,,,Belgium,BEL
+7000,5187,"Javier ""Xavi"" Arnau Creus",M,27.0,176.0,76.0,Spain,ESP
+8000,5931,Hermann Heinrich Gottfried Johann auf der Heide,M,25.0,,,Germany,GER
+9000,6665,douard Ferdinand Bader,M,20.0,172.0,76.0,France,FRA
+10000,7390,Serhiy Pavlovych Baltacha,M,22.0,181.0,75.0,Soviet Union,URS
+11000,8128,"Jennifer Mae ""Jenny"" Barringer-Simpson",F,29.0,166.0,53.0,United States,USA
+12000,8825,Vctor Manuel Baute Montanez,M,20.0,,64.0,Spain,ESP
+13000,9535,Eva Maria Belaise,F,25.0,,,Italy,ITA
+14000,10269,"Adolph Franz Marie ""Dolf"" Benz",M,19.0,,,Netherlands,NED
+15000,10972,Ren Beslaud,M,,,,Club Nautique de Franais-1,FRA
+16000,11703,Ignacio Felipe Birkner Cogan,M,16.0,,,Argentina,ARG
+17000,12438,Lus Boa Morte Pereira,M,27.0,177.0,72.0,Portugal,POR
+18000,13162,Mario Bonello,M,26.0,180.0,76.0,Malta,MLT
+19000,13883,Esther Bottomley,F,23.0,167.0,58.0,Australia,AUS
+20000,14590,Emilio Brambilla,M,25.0,,,Italy,ITA
+21000,15295,"Barbara ""Barb"" Broen-Ouelette",F,19.0,176.0,64.0,Canada,CAN
+22000,15985,Botjan Bu,M,28.0,176.0,62.0,Slovenia,SLO
+23000,16692,Declan Burns,M,24.0,178.0,78.0,Ireland,IRL
+24000,17429,Carola Calello,F,16.0,170.0,65.0,Argentina,ARG
+25000,18150,Ona Carbonell Ballestero,F,26.0,174.0,54.0,Spain,ESP
+26000,18889,Joana Sofia de Paiva Castelo,F,27.0,162.0,56.0,Portugal,POR
+27000,19624,Rafael Hugo Eugenio Ra. Chamberlain Trejos,M,41.0,170.0,70.0,Costa Rica,CRC
+28000,20362,Cheng Fei,F,20.0,152.0,43.0,China,CHN
+29000,21107,Marek Piotr Cholewa,M,24.0,176.0,72.0,Poland,POL
+30000,21842,Joetta Clark-Diggs,F,26.0,168.0,56.0,United States,USA
+31000,22569,Gianni Comandini,M,23.0,186.0,80.0,Italy,ITA
+32000,23289,Joana Ribeiro Costa,F,35.0,173.0,60.0,Brazil,BRA
+33000,24015,Jaime Cruells Folguera,M,18.0,,,Spain,ESP
+34000,24729,Pedro Henrique Gonalves da Silva,M,23.0,176.0,69.0,Brazil,BRA
+35000,25442,Tuba Dademir-Kocaaa,F,24.0,165.0,62.0,Turkey,TUR
+36000,26145,"Henri Franciscus ""Huug"" de Groot",M,21.0,,,Netherlands,NED
+37000,26867,Felix Lucien Roger Debax,M,35.0,,,France,FRA
+38000,27563,Dencho Todorov Denev,M,39.0,165.0,65.0,Bulgaria,BUL
+39000,28290,Robert Diaz,M,,,,France,FRA
+40000,28998,Gennady Konstantinovich Dobrokhotov,M,23.0,175.0,60.0,Soviet Union,URS
+41000,29684,Edward Bruce Douglas,M,49.0,,,United States,USA
+42000,30415,Henry Ludwig Duey,M,24.0,,,United States,USA
+43000,31127,Yuliya Valentynivna Dzhyma,F,23.0,166.0,66.0,Ukraine,UKR
+44000,31873,Yrj Rafael Ekqvist,M,25.0,172.0,72.0,Finland,FIN
+45000,32591,Everard Coenraad Endt,M,59.0,,,Llanoria,USA
+46000,33299,Santiago Esteva Escoda,M,16.0,174.0,67.0,Spain,ESP
+47000,34019,Mubarak Faraj Bilal,M,,172.0,72.0,United Arab Emirates,UAE
+48000,34733,Raymundo Fermn Martnez,M,27.0,175.0,71.0,Dominican Republic,DOM
+49000,35407,Karsten Finger,M,22.0,202.0,104.0,Germany,GER
+50000,36112,"Jean ""Johny"" Fonck",M,31.0,,,Luxembourg,LUX
+51000,36814,Georg Franz,M,29.0,175.0,75.0,Germany,GER
+52000,37528,Reiko Fujita,F,20.0,160.0,59.0,Japan,JPN
+53000,38237,Didier Gamerdinger,M,28.0,170.0,68.0,Monaco,MON
+54000,38930,Florencio Gascn lvarez,M,24.0,173.0,68.0,Spain,ESP
+55000,39659,Hlne Grard,F,,,,Belgium,BEL
+56000,40377,Erwin Gillmeister,M,29.0,178.0,70.0,Germany,GER
+57000,41107,Natalie Golda (-Benson),F,22.0,180.0,84.0,United States,USA
+58000,41843,Piero Gorgatto,M,31.0,,,Aretusa,ITA
+59000,42563,Nikola Grbi,M,30.0,194.0,91.0,Serbia and Montenegro,SCG
+60000,43280,Wolfgang Gruber,M,23.0,183.0,81.0,West Germany,FRG
+61000,44012,Hilda Carolyn Gurney,F,32.0,168.0,63.0,United States,USA
+62000,44732,Kim Hagger,F,22.0,171.0,62.0,Great Britain,GBR
+63000,45460,"Qi ""Kevin"" Han",M,27.0,187.0,86.0,United States,USA
+64000,46191,Tremaine Ryan Alexander Harris,M,20.0,181.0,81.0,Canada,CAN
+65000,46932,He Liping,F,23.0,174.0,68.0,China,CHN
+66000,47635,"Timothy Henry ""Tim"" Henman",M,29.0,185.0,77.0,Great Britain,GBR
+67000,48375,Delphyne Heymann-Burlet,F,25.0,163.0,56.0,France,FRA
+68000,49075,Sjoerd Evert Hoekstra,M,25.0,192.0,86.0,Netherlands,NED
+69000,49786,Albert Hood,M,19.0,150.0,56.0,United States,USA
+70000,50497,"Vra Helena Hrub (-Ralston, -Yates, -Alva)",F,15.0,,,Czechoslovakia,TCH
+71000,51224,Musaddiq Hussain,M,20.0,170.0,63.0,Pakistan,PAK
+72000,51945,Im Geum-Ja,F,17.0,161.0,56.0,South Korea,KOR
+73000,52651,Nicolae Istrate,M,27.0,183.0,88.0,Romania,ROU
+74000,53380,Petr Jkl,M,26.0,195.0,112.0,Czech Republic,CZE
+75000,54077,Oscar Jay,M,,,,France,FRA
+76000,54823,Bjrn Erik Jilsn,M,25.0,193.0,95.0,Sweden,SWE
+77000,55561,Olli Veli Pekka Jokinen,M,23.0,187.0,91.0,Finland,FIN
+78000,56315,Josef Jungmann,M,36.0,,,Czechoslovakia,TCH
+79000,57077,Ewa Urszula Kamiska-Eichler,F,23.0,164.0,69.0,Poland,POL
+80000,57800,Tatsumi Kasahara,M,29.0,168.0,60.0,Japan,JPN
+81000,58519,Kalyn Keller (-Robinson),F,19.0,177.0,72.0,United States,USA
+82000,59240,Marios Khatziandreou,M,29.0,183.0,76.0,Cyprus,CYP
+83000,59943,Kim Ho-Gon,M,25.0,184.0,84.0,South Korea,KOR
+84000,60678,Klmn Kirchmayer,M,26.0,,,Hungary-2,HUN
+85000,61374,Georgina Klug,F,32.0,172.0,63.0,Argentina,ARG
+86000,62089,Petri Mikael Kokko,M,25.0,178.0,67.0,Finland,FIN
+87000,62799,Prodromos Korkizoglou,M,25.0,189.0,78.0,Greece,GRE
+88000,63474,Radka Kovakov,F,18.0,161.0,47.0,Czech Republic,CZE
+89000,64183,Jnos Krizsn,M,21.0,175.0,72.0,Hungary,HUN
+90000,64895,Naresh Kumar,M,22.0,160.0,74.0,India,IND
+91000,65608,"Johan Henrik ""Juhani"" Laakso",M,26.0,176.0,73.0,Finland,FIN
+92000,66340,Mabel Marie Landry (-Staton),F,19.0,165.0,60.0,United States,USA
+93000,67072,Jrn Lauenborg (Hansen-),M,27.0,185.0,65.0,Denmark,DEN
+94000,67797,Lee Chae-On,M,25.0,188.0,84.0,South Korea,KOR
+95000,68520,Lia Leismller (-Braun),F,20.0,,,Germany,GER
+96000,69253,"Randall Scott ""Randy"" Lewis",M,25.0,173.0,64.0,United States,USA
+97000,69974,Lin Jicheng,M,27.0,174.0,73.0,China,CHN
+98000,70680,Liu Yen-Chiu,F,22.0,165.0,58.0,Chinese Taipei,TPE
+99000,71377,Isel Lpez Rodrguez,F,26.0,174.0,74.0,Cuba,CUB
+100000,72103,Laura Ludwig,F,30.0,181.0,70.0,Germany-1,GER
+101000,72832,Michael Macaque,M,26.0,178.0,103.0,Mauritius,MRI
+102000,73554,Duncan Mahlangu,M,21.0,183.0,68.0,South Africa,RSA
+103000,74255,Tadashi Mamiya,M,,,,Japan,JPN
+104000,74965,Serghei Marghiev,M,19.0,195.0,97.0,Moldova,MDA
+105000,75667,Vladimr Martinec,M,30.0,173.0,84.0,Czechoslovakia,TCH
+106000,76387,Ladislav Mateti,M,24.0,,,Yugoslavia,YUG
+107000,77094,Svitlana Ivanivna Maziy (-Pachkun),F,36.0,183.0,80.0,Ukraine,UKR
+108000,77836,Brent McMahon,M,23.0,178.0,65.0,Canada,CAN
+109000,78559,Csar David Menacho Flores,M,43.0,170.0,80.0,Bolivia,BOL
+110000,79261,Albert Meyong Ze,M,19.0,172.0,,Cameroon,CMR
+111000,79967,Vasiliki Millousi,F,32.0,155.0,45.0,Greece,GRE
+112000,80684,Ambrose Mlilo,M,24.0,175.0,71.0,Zimbabwe,ZIM
+113000,81421,Rolf Monsen,M,33.0,175.0,,United States,USA
+114000,82158,Jrgen Hjorth Moritzen,M,29.0,,73.5,Denmark,DEN
+115000,82898,Ahmad Salam Muhammad,M,40.0,163.0,58.0,Pakistan,PAK
+116000,83646,Beybulat Zainalovich Musayev,M,23.0,182.0,85.0,Belarus,BLR
+117000,84358,Akira Nakao,M,22.0,,,Japan,JPN
+118000,85067,Hiroshi Negami,M,23.0,,,Japan,JPN
+119000,85788,Christian Elza Niccum,M,36.0,188.0,86.0,United States-1,USA
+120000,86488,Takanobu Nishi,M,25.0,170.0,72.0,Japan,JPN
+121000,87220,Danuta Krystyna Nowak-Stachow (-Wroska),F,26.0,159.0,56.0,Poland,POL
+122000,87898,Flix C. Ocampo,M,23.0,173.0,70.0,Philippines,PHI
+123000,88648,Stanisaw Feliks Olejniczak,M,26.0,193.0,84.0,Poland,POL
+124000,89367,Sndor Orbn,M,28.0,157.0,51.0,Hungary,HUN
+125000,90088,Fabrice Ougier,M,26.0,172.0,72.0,France,FRA
+126000,90807,Frdric Pallul,M,24.0,173.0,63.0,France-2,FRA
+127000,91515,Park Hyeon-Gon,M,20.0,172.0,67.0,South Korea,KOR
+128000,92241,Maya Paunovska,F,20.0,170.0,52.0,Bulgaria,BUL
+129000,92951,Mario Pea Maldonado,M,24.0,186.0,85.0,Mexico,MEX
+130000,93671,Marika Avtandilovna Pertakhiya,F,21.0,170.0,56.0,Russia,RUS
+131000,94359,Beat Pfister,M,23.0,189.0,69.0,Switzerland,SUI
+132000,95060,Tatjana Lofamakanda Pinto,F,24.0,170.0,56.0,Germany,GER
+133000,95759,Matja Poklukar,M,33.0,183.0,74.0,Slovenia,SLO
+134000,96458,Herman Karel Potgieter,M,24.0,192.0,120.0,South Africa,RSA
+135000,97172,Valentin Ivanovich Prokopov,M,27.0,,,Soviet Union,URS
+136000,97872,Charles Quervel,M,,,,France,FRA
+137000,98590,Edvinas Ramanauskas,M,30.0,184.0,90.0,Lithuania,LTU
+138000,99299,Jean-Luc Razakarivony,M,28.0,190.0,82.0,Madagascar,MAD
+139000,100028,Efthymios Rentzias,M,20.0,213.0,115.0,Greece,GRE
+140000,100737,Bruno Riem,M,,,,Switzerland,SUI
+141000,101458,"Matthew MacKenzie ""Mack"" Robinson",M,22.0,186.0,77.0,United States,USA
+142000,102162,Pierre Rolland,M,21.0,184.0,67.0,France,FRA
+143000,102890,Lydia Chebet Rotich,F,23.0,157.0,45.0,Kenya,KEN
+144000,103592,Ihor Pavlovych Russ,M,27.0,174.0,62.0,Ukraine,UKR
+145000,104314,Hayrullah ahinkaya,M,26.0,169.0,63.0,Turkey,TUR
+146000,105034,Erasto Kambon Sampson,M,21.0,,,Saint Vincent and the Grenadines,VIN
+147000,105748,Jlia Albino Sard,F,33.0,174.0,64.0,Brazil,BRA
+148000,106460,"Edward Richard ""Eddie"" Scarf",M,27.0,180.0,99.0,Australia,AUS
+149000,107173,Sandra Marie Schmirler (-Peterson-),F,34.0,184.0,72.0,Canada,CAN
+150000,107888,Lilli Schwarzkopf,F,28.0,174.0,65.0,Germany,GER
+151000,108611,Celal ener,M,18.0,,,Turkey,TUR
+152000,109360,Robert' Shavlaq'adze,M,31.0,186.0,80.0,Soviet Union,URS
+153000,110096,Lyubov Andreyevna Shutova,F,29.0,177.0,64.0,Russia,RUS
+154000,110785,Jrgen Simon,M,22.0,186.0,85.0,Germany,GER
+155000,111519,Helge Evert Sjgren,M,25.0,,,Sweden,SWE
+156000,112211,Cecile Elaine Eustace Smith (-Hedstrom),F,15.0,,,Canada,CAN
+157000,112937,Petrissa Solja,F,22.0,168.0,67.0,Germany,GER
+158000,113713,Albert Ralph Spearow,M,28.0,180.0,66.0,United States,USA
+159000,114416,Andrs Stark,M,26.0,162.0,79.0,Hungary,HUN
+160000,115103,Gordon Stevenson,M,44.0,,,United States,USA
+161000,115785,"Dragutin ""Drago"" tritof",M,28.0,176.0,61.0,Yugoslavia,YUG
+162000,116472,Sun Kuang-Ming,M,27.0,170.0,90.0,Chinese Taipei-2,TPE
+163000,117176,Barka N. Sy,M,32.0,171.0,71.0,Senegal,SEN
+164000,117870,Wadysaw Tajner,M,24.0,172.0,70.0,Poland,POL
+165000,118581,Luigi Tarantino,M,23.0,188.0,95.0,Italy,ITA
+166000,119293,Niki Terpstra,M,28.0,185.0,74.0,Netherlands,NED
+167000,120000,Gillian Akiko Thomson,F,17.0,171.0,58.0,Philippines,PHI
+168000,120699,Mario Todorovi,M,19.0,186.0,80.0,Croatia,CRO
+169000,121396,Hajnalka Tth,F,27.0,173.0,67.0,Hungary,HUN
+170000,122111,Mara Trujillo Tenorio de Rios,F,24.0,157.0,52.0,Mexico,MEX
+171000,122826,Hannah Kaya Turski,F,25.0,165.0,58.0,Canada,CAN
+172000,123530,Annika Urvikko,F,21.0,157.0,57.0,Finland,FIN
+173000,124251,Karen Van de Graaf (-Ramsay),F,17.0,167.0,70.0,Australia,AUS
+174000,125014,Inke van Wyk,F,29.0,160.0,61.0,South Africa,RSA
+175000,125746,Bart Veldkamp,M,24.0,181.0,84.0,Netherlands,NED
+176000,126453,Viville,M,,,,France,FRA
+177000,127176,Stephan Volkert,M,24.0,200.0,105.0,Germany,GER
+178000,127897,Kristin Wagner,F,33.0,162.0,57.0,Germany,GER
+179000,128628,Wang Yimei,F,20.0,190.0,90.0,China,CHN
+180000,129352,Gottfried Weilenmann,M,,,,Switzerland,SUI
+181000,130051,"Graeme Alexander Stewart Lockhart ""Sandy"" Whitelaw",M,25.0,,,Great Britain,GBR
+182000,130761,Charles Henry Willumsen,M,29.0,,,Denmark,DEN
+183000,131504,Todd Andrew Woodbridge,M,21.0,178.0,75.0,Australia,AUS
+184000,132212,Vladislav Pavlovich Yakovlev,M,23.0,188.0,85.0,Kazakhstan,KAZ
+185000,132948,Lyudmila Andreyevna Yezhova-Grebenkova,F,22.0,140.0,39.0,Russia,RUS
+186000,133643,Vadim Zadoinov,M,31.0,187.0,72.0,Moldova,MDA
+187000,134353,Christin Zenner,F,17.0,174.0,61.0,Germany,GER
+188000,135045,Rbert Zimonyi,M,30.0,170.0,52.0,Hungary,HUN

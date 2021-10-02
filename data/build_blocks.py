@@ -31,13 +31,12 @@ def make_blocks(dir):
 
 	for csv in os.listdir('./no_block_data'):
 		table_name = csv[:-4]
-		print(table_name)
+		print('making block files for table '+table_name+'...',end=" ")
 		if not os.path.isdir('./disk/'+table_name):
-			print("here")
 			os.mkdir('./disk/' + table_name)
 		df = pd.read_csv('./no_block_data/'+csv)
-		# print(df)
 		data_len = len(df.index)
+		print("table len",data_len,"block size", BLOCK_SIZE,"...")
 		block_num = 0
 		for idx in range(0,data_len,BLOCK_SIZE):
 			filename = '/block'+str(block_num)+'.csv'
