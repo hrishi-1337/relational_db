@@ -18,7 +18,7 @@ class relational_db:
 			table = pd.read_csv("datasets/"+source+".csv")
 			table_list.append(table)
 		return table_list
-
+		
 	def write_blocks(self, blocksize, table_list, sources, disk_path):
 		for table, source in zip(table_list, sources):
 			block = 1
@@ -34,7 +34,7 @@ class relational_db:
 	def read_blocks(self):
 		table = pd.read_csv("disk/test1/Block1")
 		print(table)
-		
+
 	def create_index(self):
 		pass
 
