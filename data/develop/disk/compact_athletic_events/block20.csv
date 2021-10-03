@@ -1,11 +1,11 @@
-,Unnamed: 0,Athelete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-200,200000,100449,ISV,2000 Summer,2000,Summer,Sydney,Shooting,"Shooting Men's Free Pistol, 50 metres",
-201,201000,100965,PUR,1992 Summer,1992,Summer,Barcelona,Tennis,Tennis Men's Doubles,
-202,202000,101455,USA,2012 Summer,2012,Summer,London,Athletics,Athletics Men's 800 metres,
-203,203000,101948,GBR,2012 Summer,2012,Summer,London,Hockey,Hockey Women's Hockey,Bronze
-204,204000,102423,BEL,1972 Summer,1972,Summer,Munich,Hockey,Hockey Men's Hockey,
-205,205000,102931,FRA,1980 Summer,1980,Summer,Moskva,Judo,Judo Men's Half-Heavyweight,
-206,206000,103410,ESP,1976 Summer,1976,Summer,Montreal,Athletics,"Athletics Men's 10,000 metres",
-207,207000,103888,KAZ,2008 Summer,2008,Summer,Beijing,Athletics,Athletics Women's Triple Jump,
-208,208000,104405,FRA,1912 Summer,1912,Summer,Stockholm,Rowing,"Rowing Men's Coxed Fours, Outriggers",
-209,209000,104923,GER,2000 Summer,2000,Summer,Sydney,Equestrianism,"Equestrianism Mixed Dressage, Team",Gold
+Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+100449,ISV,2000 Summer,2000,Summer,Sydney,Shooting,"Shooting Men's Free Pistol, 50 metres",
+100965,PUR,1992 Summer,1992,Summer,Barcelona,Tennis,Tennis Men's Doubles,
+101455,USA,2012 Summer,2012,Summer,London,Athletics,Athletics Men's 800 metres,
+101948,GBR,2012 Summer,2012,Summer,London,Hockey,Hockey Women's Hockey,Bronze
+102423,BEL,1972 Summer,1972,Summer,Munich,Hockey,Hockey Men's Hockey,
+102931,FRA,1980 Summer,1980,Summer,Moskva,Judo,Judo Men's Half-Heavyweight,
+103410,ESP,1976 Summer,1976,Summer,Montreal,Athletics,"Athletics Men's 10,000 metres",
+103888,KAZ,2008 Summer,2008,Summer,Beijing,Athletics,Athletics Women's Triple Jump,
+104405,FRA,1912 Summer,1912,Summer,Stockholm,Rowing,"Rowing Men's Coxed Fours, Outriggers",
+104923,GER,2000 Summer,2000,Summer,Sydney,Equestrianism,"Equestrianism Mixed Dressage, Team",Gold
