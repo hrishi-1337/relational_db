@@ -1,2 +1,7 @@
 # Directory for Source
-## File Explanations
+### b_tree
+b-tree implementation
+### performance
+experiment scripts
+### queries
+query and join implementations

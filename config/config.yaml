@@ -1,0 +1,9 @@
+binary: true
+blocksize: 10
+build_blocks:
+  binary: true
+  csv: true
+indexes:
+  athletes:
+  - Team
+rootdir: /Users/wesrobbins/Desktop/fall2021/540/hw1-repo/
