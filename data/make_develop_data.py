@@ -23,4 +23,4 @@ for csv_file in os.listdir(data_path):
         ilen = len(df.index)
         df = df.drop([x for x in range(ilen) if x%DIV!=0])
         print(df)
-        df.to_csv('develop/no_block_data/compact_'+csv_file)
+        df.to_csv('develop/no_block_data/compact_'+csv_file, index=False)

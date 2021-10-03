@@ -8,7 +8,7 @@ from sys import exit
 BLOCK_SIZE = 10
 build = ['develop'] # either 'full', 'develop', or both
 remake = True		# to remake all tables
-REPO_PATH = '/Users/wesrobbins/Desktop/fall2021/540/hw1-repo/' # path to repo on coputer
+REPO_PATH = 'C:/Users/Hrishi/PycharmProjects/relational_db/'
 
 # cd into repo
 os.chdir(REPO_PATH+'data')
@@ -40,7 +40,7 @@ def make_blocks(dir):
 		block_num = 0
 		for idx in range(0,data_len,BLOCK_SIZE):
 			filename = '/block'+str(block_num)+'.csv'
-			df[idx:idx+BLOCK_SIZE].to_csv('./disk/'+table_name+filename)
+			df[idx:idx+BLOCK_SIZE].to_csv('./disk/'+table_name+filename, index=False)
 			block_num+=1
 
 

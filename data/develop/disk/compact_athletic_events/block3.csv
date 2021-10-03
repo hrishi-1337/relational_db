@@ -1,11 +1,11 @@
-,Unnamed: 0,Athelete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-30,30000,15488,BAH,2000 Summer,2000,Summer,Sydney,Athletics,Athletics Men's 4 x 400 metres Relay,Bronze
-31,31000,15962,FIJ,2012 Summer,2012,Summer,London,Swimming,Swimming Women's 100 metres Breaststroke,
-32,32000,16445,CRO,2012 Summer,2012,Summer,London,Handball,Handball Men's Handball,Bronze
-33,33000,16981,RUS,2002 Winter,2002,Winter,Salt Lake City,Figure Skating,Figure Skating Women's Singles,
-34,34000,17513,PHI,1968 Summer,1968,Summer,Mexico City,Boxing,Boxing Men's Bantamweight,
-35,35000,18032,GBR,1980 Summer,1980,Summer,Moskva,Athletics,Athletics Men's Shot Put,
-36,36000,18495,AUS,1998 Winter,1998,Winter,Nagano,Figure Skating,Figure Skating Mixed Pairs,
-37,37000,19025,CHI,2012 Summer,2012,Summer,London,Gymnastics,Gymnastics Women's Balance Beam,
-38,38000,19528,CUB,2016 Summer,2016,Summer,Rio de Janeiro,Athletics,Athletics Men's 4 x 400 metres Relay,
-39,39000,20083,KEN,2004 Summer,2004,Summer,Athina,Athletics,"Athletics Men's 5,000 metres",
+Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+15488,BAH,2000 Summer,2000,Summer,Sydney,Athletics,Athletics Men's 4 x 400 metres Relay,Bronze
+15962,FIJ,2012 Summer,2012,Summer,London,Swimming,Swimming Women's 100 metres Breaststroke,
+16445,CRO,2012 Summer,2012,Summer,London,Handball,Handball Men's Handball,Bronze
+16981,RUS,2002 Winter,2002,Winter,Salt Lake City,Figure Skating,Figure Skating Women's Singles,
+17513,PHI,1968 Summer,1968,Summer,Mexico City,Boxing,Boxing Men's Bantamweight,
+18032,GBR,1980 Summer,1980,Summer,Moskva,Athletics,Athletics Men's Shot Put,
+18495,AUS,1998 Winter,1998,Winter,Nagano,Figure Skating,Figure Skating Mixed Pairs,
+19025,CHI,2012 Summer,2012,Summer,London,Gymnastics,Gymnastics Women's Balance Beam,
+19528,CUB,2016 Summer,2016,Summer,Rio de Janeiro,Athletics,Athletics Men's 4 x 400 metres Relay,
+20083,KEN,2004 Summer,2004,Summer,Athina,Athletics,"Athletics Men's 5,000 metres",

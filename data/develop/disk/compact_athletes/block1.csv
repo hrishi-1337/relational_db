@@ -1,11 +1,11 @@
-,Unnamed: 0,Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
-10,10000,7390,Serhiy Pavlovych Baltacha,M,22.0,181.0,75.0,Soviet Union,URS
-11,11000,8128,"Jennifer Mae ""Jenny"" Barringer-Simpson",F,29.0,166.0,53.0,United States,USA
-12,12000,8825,Vctor Manuel Baute Montanez,M,20.0,,64.0,Spain,ESP
-13,13000,9535,Eva Maria Belaise,F,25.0,,,Italy,ITA
-14,14000,10269,"Adolph Franz Marie ""Dolf"" Benz",M,19.0,,,Netherlands,NED
-15,15000,10972,Ren Beslaud,M,,,,Club Nautique de Franais-1,FRA
-16,16000,11703,Ignacio Felipe Birkner Cogan,M,16.0,,,Argentina,ARG
-17,17000,12438,Lus Boa Morte Pereira,M,27.0,177.0,72.0,Portugal,POR
-18,18000,13162,Mario Bonello,M,26.0,180.0,76.0,Malta,MLT
-19,19000,13883,Esther Bottomley,F,23.0,167.0,58.0,Australia,AUS
+Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
+7390,Serhiy Pavlovych Baltacha,M,22.0,181.0,75.0,Soviet Union,URS
+8128,"Jennifer Mae ""Jenny"" Barringer-Simpson",F,29.0,166.0,53.0,United States,USA
+8825,Vctor Manuel Baute Montanez,M,20.0,,64.0,Spain,ESP
+9535,Eva Maria Belaise,F,25.0,,,Italy,ITA
+10269,"Adolph Franz Marie ""Dolf"" Benz",M,19.0,,,Netherlands,NED
+10972,Ren Beslaud,M,,,,Club Nautique de Franais-1,FRA
+11703,Ignacio Felipe Birkner Cogan,M,16.0,,,Argentina,ARG
+12438,Lus Boa Morte Pereira,M,27.0,177.0,72.0,Portugal,POR
+13162,Mario Bonello,M,26.0,180.0,76.0,Malta,MLT
+13883,Esther Bottomley,F,23.0,167.0,58.0,Australia,AUS

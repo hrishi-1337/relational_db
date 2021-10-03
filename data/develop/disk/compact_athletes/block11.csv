@@ -1,11 +1,11 @@
-,Unnamed: 0,Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
-110,110000,79261,Albert Meyong Ze,M,19.0,172.0,,Cameroon,CMR
-111,111000,79967,Vasiliki Millousi,F,32.0,155.0,45.0,Greece,GRE
-112,112000,80684,Ambrose Mlilo,M,24.0,175.0,71.0,Zimbabwe,ZIM
-113,113000,81421,Rolf Monsen,M,33.0,175.0,,United States,USA
-114,114000,82158,Jrgen Hjorth Moritzen,M,29.0,,73.5,Denmark,DEN
-115,115000,82898,Ahmad Salam Muhammad,M,40.0,163.0,58.0,Pakistan,PAK
-116,116000,83646,Beybulat Zainalovich Musayev,M,23.0,182.0,85.0,Belarus,BLR
-117,117000,84358,Akira Nakao,M,22.0,,,Japan,JPN
-118,118000,85067,Hiroshi Negami,M,23.0,,,Japan,JPN
-119,119000,85788,Christian Elza Niccum,M,36.0,188.0,86.0,United States-1,USA
+Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
+79261,Albert Meyong Ze,M,19.0,172.0,,Cameroon,CMR
+79967,Vasiliki Millousi,F,32.0,155.0,45.0,Greece,GRE
+80684,Ambrose Mlilo,M,24.0,175.0,71.0,Zimbabwe,ZIM
+81421,Rolf Monsen,M,33.0,175.0,,United States,USA
+82158,Jrgen Hjorth Moritzen,M,29.0,,73.5,Denmark,DEN
+82898,Ahmad Salam Muhammad,M,40.0,163.0,58.0,Pakistan,PAK
+83646,Beybulat Zainalovich Musayev,M,23.0,182.0,85.0,Belarus,BLR
+84358,Akira Nakao,M,22.0,,,Japan,JPN
+85067,Hiroshi Negami,M,23.0,,,Japan,JPN
+85788,Christian Elza Niccum,M,36.0,188.0,86.0,United States-1,USA
