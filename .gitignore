@@ -1,3 +1,4 @@
 data/full/disk
 data/full/indexes
 **__pycache__
+**.pytest_cache
