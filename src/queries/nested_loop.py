@@ -24,24 +24,16 @@ class NestedLoop:
 
     def nested(self, DB_PATH, tables, block_list, NOC):
         result_df = pd.DataFrame()
-        # for outer_index, outer_row in table_dict[tables[0]].iterrows():
-        #     for inner_index, inner_row in table_dict[tables[1]].iterrows():
-        #         if outer_row["NOC"] == inner_row["NOC"] and inner_row["NOC"] == NOC\
-        #                 and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
-        #             merge = pd.concat([outer_row, inner_row]).drop_duplicates()
-        #             result_df = result_df.append(merge, ignore_index=True)
-
         for i in range(0, block_list[0]):
             outer_block = pd.read_csv(DB_PATH + "/" + tables[0] + "/block" + str(i) + ".csv")
             n = 0
             for outer_index, outer_row in outer_block.iterrows():
-                r = 0
                 inner_block = pd.read_csv(DB_PATH + "/" + tables[1] + "/block" + str(n) + ".csv")
-                if outer_row["NOC"] == inner_block.iloc[r]["NOC"] and inner_block.iloc[r]["NOC"] == NOC \
-                        and outer_row["Athlete ID"] == inner_block.iloc[r]["Athlete ID"]:
-                    merge = pd.concat([outer_row, inner_block.iloc[r]]).drop_duplicates()
-                    result_df = result_df.append(merge, ignore_index=True)
-                r += 1
+                for inner_index, inner_row in inner_block.iterrows():
+                    if outer_row["NOC"] == inner_row["NOC"] and inner_row["NOC"] == NOC \
+                            and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                        merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+                        result_df = result_df.append(merge, ignore_index=True)
             n += 1
         return result_df
 
