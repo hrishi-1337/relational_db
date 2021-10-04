@@ -1,11 +1,11 @@
-Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-10532,GER,1998 Winter,1998,Winter,Nagano,Alpine Skiing,Alpine Skiing Women's Slalom,
-11090,FRA,1984 Summer,1984,Summer,Los Angeles,Basketball,Basketball Men's Basketball,
-11600,NZL,2008 Summer,2008,Summer,Beijing,Football,Football Women's Football,
-12090,NZL,1976 Winter,1976,Winter,Innsbruck,Alpine Skiing,Alpine Skiing Men's Downhill,
-12602,SUI,1992 Summer,1992,Summer,Barcelona,Rowing,Rowing Men's Quadruple Sculls,
-13091,ITA,1980 Summer,1980,Summer,Moskva,Basketball,Basketball Men's Basketball,Silver
-13566,AUS,1996 Summer,1996,Summer,Atlanta,Basketball,Basketball Men's Basketball,
-14046,ALG,1988 Summer,1988,Summer,Seoul,Athletics,Athletics Women's 800 metres,
-14502,CAN,2004 Summer,2004,Summer,Athina,Softball,Softball Women's Softball,
-14998,GER,2000 Summer,2000,Summer,Sydney,Fencing,"Fencing Men's Foil, Team",
+,Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+20,10532,GER,1998 Winter,1998,Winter,Nagano,Alpine Skiing,Alpine Skiing Women's Slalom,
+21,11090,FRA,1984 Summer,1984,Summer,Los Angeles,Basketball,Basketball Men's Basketball,
+22,11600,NZL,2008 Summer,2008,Summer,Beijing,Football,Football Women's Football,
+23,12090,NZL,1976 Winter,1976,Winter,Innsbruck,Alpine Skiing,Alpine Skiing Men's Downhill,
+24,12602,SUI,1992 Summer,1992,Summer,Barcelona,Rowing,Rowing Men's Quadruple Sculls,
+25,13091,ITA,1980 Summer,1980,Summer,Moskva,Basketball,Basketball Men's Basketball,Silver
+26,13566,AUS,1996 Summer,1996,Summer,Atlanta,Basketball,Basketball Men's Basketball,
+27,14046,ALG,1988 Summer,1988,Summer,Seoul,Athletics,Athletics Women's 800 metres,
+28,14502,CAN,2004 Summer,2004,Summer,Athina,Softball,Softball Women's Softball,
+29,14998,GER,2000 Summer,2000,Summer,Sydney,Fencing,"Fencing Men's Foil, Team",

@@ -1,11 +1,11 @@
 """ block nested loop """
 import os.path
 import pandas as pd
-
+from definitions import root
 
 class BlockNestedLoop:
     def main(self):
-        DB_PATH = '../../data/develop/disk/'
+        DB_PATH = os.path.join(root, 'data', 'develop', 'disk')
         block_list = []
         NOC = "CHN"
         tables = os.listdir(DB_PATH)

@@ -1,11 +1,11 @@
-Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-85438,ISV,1992 Summer,1992,Summer,Barcelona,Sailing,Sailing Women's Windsurfer,
-85939,CRC,1988 Summer,1988,Summer,Seoul,Swimming,Swimming Women's 100 metres Breaststroke,
-86420,SWE,1912 Summer,1912,Summer,Stockholm,Gymnastics,"Gymnastics Men's Team All-Around, Swedish System",Gold
-86938,USA,2000 Summer,2000,Summer,Sydney,Volleyball,Volleyball Women's Volleyball,
-87406,AUT,2000 Summer,2000,Summer,Sydney,Rowing,Rowing Men's Quadruple Sculls,
-87925,POL,1968 Summer,1968,Summer,Mexico City,Gymnastics,Gymnastics Women's Team All-Around,
-88467,NED,1906 Summer,1906,Summer,Athina,Fencing,"Fencing Men's Foil, Individual",
-88983,SWE,1968 Winter,1968,Winter,Grenoble,Ice Hockey,Ice Hockey Men's Ice Hockey,
-89444,ITA,1928 Summer,1928,Summer,Amsterdam,Boxing,Boxing Men's Lightweight,Gold
-89957,SUI,2006 Winter,2006,Winter,Torino,Figure Skating,Figure Skating Men's Singles,
+,Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+170,85438,ISV,1992 Summer,1992,Summer,Barcelona,Sailing,Sailing Women's Windsurfer,
+171,85939,CRC,1988 Summer,1988,Summer,Seoul,Swimming,Swimming Women's 100 metres Breaststroke,
+172,86420,SWE,1912 Summer,1912,Summer,Stockholm,Gymnastics,"Gymnastics Men's Team All-Around, Swedish System",Gold
+173,86938,USA,2000 Summer,2000,Summer,Sydney,Volleyball,Volleyball Women's Volleyball,
+174,87406,AUT,2000 Summer,2000,Summer,Sydney,Rowing,Rowing Men's Quadruple Sculls,
+175,87925,POL,1968 Summer,1968,Summer,Mexico City,Gymnastics,Gymnastics Women's Team All-Around,
+176,88467,NED,1906 Summer,1906,Summer,Athina,Fencing,"Fencing Men's Foil, Individual",
+177,88983,SWE,1968 Winter,1968,Winter,Grenoble,Ice Hockey,Ice Hockey Men's Ice Hockey,
+178,89444,ITA,1928 Summer,1928,Summer,Amsterdam,Boxing,Boxing Men's Lightweight,Gold
+179,89957,SUI,2006 Winter,2006,Winter,Torino,Figure Skating,Figure Skating Men's Singles,

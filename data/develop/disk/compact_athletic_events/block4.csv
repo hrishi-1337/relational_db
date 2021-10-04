@@ -1,11 +1,11 @@
-Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-20572,HKG,1960 Summer,1960,Summer,Roma,Swimming,Swimming Men's 100 metres Freestyle,
-21127,HKG,1984 Summer,1984,Summer,Los Angeles,Judo,Judo Men's Half-Lightweight,
-21648,USA,2004 Summer,2004,Summer,Athina,Rowing,Rowing Men's Coxed Eights,Gold
-22173,AUS,1956 Summer,1956,Summer,Melbourne,Rowing,Rowing Men's Coxed Pairs,
-22673,IRL,2016 Summer,2016,Summer,Rio de Janeiro,Boxing,Boxing Men's Bantamweight,
-23206,MEX,2012 Summer,2012,Summer,London,Football,Football Men's Football,Gold
-23735,USA,2000 Summer,2000,Summer,Sydney,Athletics,Athletics Men's 110 metres Hurdles,Bronze
-24220,CHI,1984 Summer,1984,Summer,Los Angeles,Cycling,"Cycling Men's Team Pursuit, 4,000 metres",
-24734,BRA,1976 Summer,1976,Summer,Montreal,Athletics,Athletics Men's 200 metres,
-25251,CZE,2010 Winter,2010,Winter,Vancouver,Bobsleigh,Bobsleigh Men's Four,
+,Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+40,20572,HKG,1960 Summer,1960,Summer,Roma,Swimming,Swimming Men's 100 metres Freestyle,
+41,21127,HKG,1984 Summer,1984,Summer,Los Angeles,Judo,Judo Men's Half-Lightweight,
+42,21648,USA,2004 Summer,2004,Summer,Athina,Rowing,Rowing Men's Coxed Eights,Gold
+43,22173,AUS,1956 Summer,1956,Summer,Melbourne,Rowing,Rowing Men's Coxed Pairs,
+44,22673,IRL,2016 Summer,2016,Summer,Rio de Janeiro,Boxing,Boxing Men's Bantamweight,
+45,23206,MEX,2012 Summer,2012,Summer,London,Football,Football Men's Football,Gold
+46,23735,USA,2000 Summer,2000,Summer,Sydney,Athletics,Athletics Men's 110 metres Hurdles,Bronze
+47,24220,CHI,1984 Summer,1984,Summer,Los Angeles,Cycling,"Cycling Men's Team Pursuit, 4,000 metres",
+48,24734,BRA,1976 Summer,1976,Summer,Montreal,Athletics,Athletics Men's 200 metres,
+49,25251,CZE,2010 Winter,2010,Winter,Vancouver,Bobsleigh,Bobsleigh Men's Four,
