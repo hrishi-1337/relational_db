@@ -34,7 +34,7 @@ def make_blocks(dir,BLOCK_SIZE,csv=True,binary=True):
 			filename = '/block'+str(block_num)
 			newdf = df[idx:idx+BLOCK_SIZE]
 			if csv:
-				newdf.to_csv(dir+'disk/'+table_name+filename+'.csv')
+				newdf.to_csv(dir+'disk/'+table_name+filename+'.csv', index=False)
 			if binary:
 				newdf.to_pickle(dir+'disk/'+table_name+filename+'.p')
 			block_num+=1

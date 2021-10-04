@@ -6,13 +6,14 @@ from definitions import root
 class BlockNestedLoop:
     def main(self):
         DB_PATH = os.path.join(root, 'data', 'develop', 'disk')
-        block_list = []
         NOC = "CHN"
         tables = os.listdir(DB_PATH)
-        result = self.tables(DB_PATH, block_list, tables, NOC)
+        tables[:] = [x for x in tables if "bin" not in x]
+        result = self.tables(DB_PATH, tables, NOC)
         print(result)
 
-    def tables(self, DB_PATH, block_list, tables, NOC):
+    def tables(self, DB_PATH, tables, NOC):
+        block_list = []
         for table in tables:
             table_path = os.path.join(DB_PATH, table)
             block_count = len(os.listdir(table_path))

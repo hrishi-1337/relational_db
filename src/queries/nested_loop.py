@@ -9,31 +9,40 @@ class NestedLoop:
         table_dict = {}
         NOC = "CHN"
         tables = os.listdir(DB_PATH)
+        tables[:] = [x for x in tables if "bin" not in x]
         result = self.tables(DB_PATH, table_dict, tables, NOC)
         print(result)
 
     def tables(self, DB_PATH, table_dict, tables, NOC):
+        block_list = []
         for table in tables:
             table_path = os.path.join(DB_PATH, table)
             block_count = len(os.listdir(table_path))
-            block = 0
-            block_list = []
-            for i in range(0, int(block_count/2)):
-                block_list.append(table_path+"/block"+str(block)+".csv")
-                block += 1
-            table_dict[table] = pd.concat(map(pd.read_csv, block_list), ignore_index=True)
-        result = self.nested(tables, table_dict, NOC)
+            block_list.append(int(block_count / 2))
+        result = self.nested(DB_PATH, tables, block_list, NOC)
         return result
 
-    def nested(self, tables, table_dict, NOC):
+    def nested(self, DB_PATH, tables, block_list, NOC):
         result_df = pd.DataFrame()
-        for outer_index, outer_row in table_dict[tables[0]].iterrows():
-            for inner_index, inner_row in table_dict[tables[1]].iterrows():
-                if outer_row["NOC"] == inner_row["NOC"] and inner_row["NOC"] == NOC\
-                        and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
-                    merge = pd.concat([outer_row, inner_row]).drop_duplicates()
-                    result_df = result_df.append(merge, ignore_index=True)
+        # for outer_index, outer_row in table_dict[tables[0]].iterrows():
+        #     for inner_index, inner_row in table_dict[tables[1]].iterrows():
+        #         if outer_row["NOC"] == inner_row["NOC"] and inner_row["NOC"] == NOC\
+        #                 and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+        #             merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+        #             result_df = result_df.append(merge, ignore_index=True)
 
+        for i in range(0, block_list[0]):
+            outer_block = pd.read_csv(DB_PATH + "/" + tables[0] + "/block" + str(i) + ".csv")
+            n = 0
+            for outer_index, outer_row in outer_block.iterrows():
+                r = 0
+                inner_block = pd.read_csv(DB_PATH + "/" + tables[1] + "/block" + str(n) + ".csv")
+                if outer_row["NOC"] == inner_block.iloc[r]["NOC"] and inner_block.iloc[r]["NOC"] == NOC \
+                        and outer_row["Athlete ID"] == inner_block.iloc[r]["Athlete ID"]:
+                    merge = pd.concat([outer_row, inner_block.iloc[r]]).drop_duplicates()
+                    result_df = result_df.append(merge, ignore_index=True)
+                r += 1
+            n += 1
         return result_df
 
 

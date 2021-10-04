@@ -1,11 +1,11 @@
-,Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-240,120267,TPE,1968 Summer,1968,Summer,Mexico City,Athletics,Athletics Women's Pentathlon,
-241,120715,ITA,1996 Summer,1996,Summer,Atlanta,Volleyball,Volleyball Men's Volleyball,Silver
-242,121214,HUN,1912 Summer,1912,Summer,Stockholm,Shooting,"Shooting Men's Dueling Pistol, 30 metres",
-243,121695,ITA,1988 Summer,1988,Summer,Seoul,Gymnastics,Gymnastics Men's Horse Vault,
-244,122193,GRE,2004 Summer,2004,Summer,Athina,Weightlifting,Weightlifting Women's Middleweight,
-245,122686,EUN,1992 Summer,1992,Summer,Barcelona,Athletics,Athletics Women's High Jump,
-246,123185,HUN,1924 Summer,1924,Summer,Paris,Fencing,"Fencing Men's Sabre, Team",Silver
-247,123674,SVK,2002 Winter,2002,Winter,Salt Lake City,Short Track Speed Skating,"Short Track Speed Skating Men's 1,500 metres",
-248,124158,BEL,1928 Summer,1928,Summer,Amsterdam,Wrestling,"Wrestling Men's Light-Heavyweight, Freestyle",
-249,124656,NED,1988 Summer,1988,Summer,Seoul,Athletics,Athletics Men's 800 metres,
+Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+120267,TPE,1968 Summer,1968,Summer,Mexico City,Athletics,Athletics Women's Pentathlon,
+120715,ITA,1996 Summer,1996,Summer,Atlanta,Volleyball,Volleyball Men's Volleyball,Silver
+121214,HUN,1912 Summer,1912,Summer,Stockholm,Shooting,"Shooting Men's Dueling Pistol, 30 metres",
+121695,ITA,1988 Summer,1988,Summer,Seoul,Gymnastics,Gymnastics Men's Horse Vault,
+122193,GRE,2004 Summer,2004,Summer,Athina,Weightlifting,Weightlifting Women's Middleweight,
+122686,EUN,1992 Summer,1992,Summer,Barcelona,Athletics,Athletics Women's High Jump,
+123185,HUN,1924 Summer,1924,Summer,Paris,Fencing,"Fencing Men's Sabre, Team",Silver
+123674,SVK,2002 Winter,2002,Winter,Salt Lake City,Short Track Speed Skating,"Short Track Speed Skating Men's 1,500 metres",
+124158,BEL,1928 Summer,1928,Summer,Amsterdam,Wrestling,"Wrestling Men's Light-Heavyweight, Freestyle",
+124656,NED,1988 Summer,1988,Summer,Seoul,Athletics,Athletics Men's 800 metres,

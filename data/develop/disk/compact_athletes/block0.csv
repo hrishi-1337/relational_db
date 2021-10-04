@@ -1,11 +1,11 @@
-,Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
-0,1,A Dijiang,M,24.0,180.0,80.0,China,CHN
-1,753,Yurie Adachi,F,28.0,156.0,51.0,Japan,JPN
-2,1498,"Charles Benedict ""Ben"" Ainslie",M,27.0,183.0,90.0,Great Britain,GBR
-3,2273,Issa Alassane-Oussni,M,27.0,180.0,76.0,Benin,BEN
-4,2999,Patricio Javier Almonacid Gonzlez,M,28.0,166.0,60.0,Chile,CHI
-5,3736,Ida Kathrine Andersen (-Berthet),F,24.0,168.0,57.0,Norway,NOR
-6,4472,Paul Eugne Albert Anspach,M,26.0,,,Belgium,BEL
-7,5187,"Javier ""Xavi"" Arnau Creus",M,27.0,176.0,76.0,Spain,ESP
-8,5931,Hermann Heinrich Gottfried Johann auf der Heide,M,25.0,,,Germany,GER
-9,6665,douard Ferdinand Bader,M,20.0,172.0,76.0,France,FRA
+Athlete ID,Name,Sex,Age,Height,Weight,Team,NOC
+1,A Dijiang,M,24.0,180.0,80.0,China,CHN
+753,Yurie Adachi,F,28.0,156.0,51.0,Japan,JPN
+1498,"Charles Benedict ""Ben"" Ainslie",M,27.0,183.0,90.0,Great Britain,GBR
+2273,Issa Alassane-Oussni,M,27.0,180.0,76.0,Benin,BEN
+2999,Patricio Javier Almonacid Gonzlez,M,28.0,166.0,60.0,Chile,CHI
+3736,Ida Kathrine Andersen (-Berthet),F,24.0,168.0,57.0,Norway,NOR
+4472,Paul Eugne Albert Anspach,M,26.0,,,Belgium,BEL
+5187,"Javier ""Xavi"" Arnau Creus",M,27.0,176.0,76.0,Spain,ESP
+5931,Hermann Heinrich Gottfried Johann auf der Heide,M,25.0,,,Germany,GER
+6665,douard Ferdinand Bader,M,20.0,172.0,76.0,France,FRA

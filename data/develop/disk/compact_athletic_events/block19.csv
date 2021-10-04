@@ -1,11 +1,11 @@
-,Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
-190,95428,ESP,1996 Summer,1996,Summer,Atlanta,Gymnastics,Gymnastics Women's Balance Beam,
-191,95923,BLR,1996 Summer,1996,Summer,Atlanta,Gymnastics,Gymnastics Women's Floor Exercise,
-192,96406,FIN,1964 Winter,1964,Winter,Innsbruck,Biathlon,Biathlon Men's 20 kilometres,
-193,96902,CAN,1964 Summer,1964,Summer,Tokyo,Rowing,Rowing Men's Coxed Eights,
-194,97388,URS,1980 Summer,1980,Summer,Moskva,Athletics,Athletics Men's 110 metres Hurdles,Bronze
-195,97861,FRA,1984 Summer,1984,Summer,Los Angeles,Athletics,Athletics Men's 400 metres,
-196,98416,CAN,1904 Summer,1904,Summer,St. Louis,Lacrosse,Lacrosse Men's Lacrosse,Bronze
-197,98894,FIN,1992 Summer,1992,Summer,Barcelona,Athletics,Athletics Women's Javelin Throw,
-198,99410,SCG,2000 Summer,2000,Summer,Sydney,Basketball,Basketball Men's Basketball,
-199,99948,FRA,1956 Summer,1956,Summer,Melbourne,Canoeing,"Canoeing Men's Canadian Doubles, 1,000 metres",
+Athlete ID,NOC,Games,Year,Season,City,Sport,Event,Medal
+95428,ESP,1996 Summer,1996,Summer,Atlanta,Gymnastics,Gymnastics Women's Balance Beam,
+95923,BLR,1996 Summer,1996,Summer,Atlanta,Gymnastics,Gymnastics Women's Floor Exercise,
+96406,FIN,1964 Winter,1964,Winter,Innsbruck,Biathlon,Biathlon Men's 20 kilometres,
+96902,CAN,1964 Summer,1964,Summer,Tokyo,Rowing,Rowing Men's Coxed Eights,
+97388,URS,1980 Summer,1980,Summer,Moskva,Athletics,Athletics Men's 110 metres Hurdles,Bronze
+97861,FRA,1984 Summer,1984,Summer,Los Angeles,Athletics,Athletics Men's 400 metres,
+98416,CAN,1904 Summer,1904,Summer,St. Louis,Lacrosse,Lacrosse Men's Lacrosse,Bronze
+98894,FIN,1992 Summer,1992,Summer,Barcelona,Athletics,Athletics Women's Javelin Throw,
+99410,SCG,2000 Summer,2000,Summer,Sydney,Basketball,Basketball Men's Basketball,
+99948,FRA,1956 Summer,1956,Summer,Melbourne,Canoeing,"Canoeing Men's Canadian Doubles, 1,000 metres",
