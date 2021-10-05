@@ -6,9 +6,13 @@ from termcolor import colored
 
 def send_query(table, join, join_col, where, where_clause):
     pass
-
+def get_root():
+    with open('config/config.yaml') as f:
+        root = yaml.load(f)['rootdir']
+    return root
 def print_help():
-    with open('intro.txt', 'r') as f:
+    root = get_root()
+    with open(root+'/src/prompt/intro.txt', 'r') as f:
         for line in f:
             print(line,end="")
     print()
@@ -23,13 +27,14 @@ def print_tables():
 
 def load_premade():
     p = []
-    with open('premade.txt', 'r') as f:
+    root = get_root()
+    with open(root + '/src/prompt/premade.txt', 'r') as f:
         for line in f:
             p.append(line[:-1])
     return p
 
 def get_tables_list():
-    root = '/Users/wesrobbins/Desktop/fall2021/540/hw1-repo'
+    root = get_root()
     tables = []
     tables = os.listdir(root+'/data/develop/disk/')
     tables += os.listdir(root+'/data/full/disk/')
@@ -40,7 +45,7 @@ def get_tables_list():
     return tables
 
 def get_cols(tableL):
-    root = '/Users/wesrobbins/Desktop/fall2021/540/hw1-repo'
+    root = get_root()
     cols = []
     for table in tableL:
         if table in os.listdir(root+'/data/develop/disk/'):
@@ -236,7 +241,3 @@ def prompt():
         else:
             print(colored('error:', 'red'),end=" ")
             print("Query must start with \'sel \' or be in menu")
-
-
-
-prompt()
