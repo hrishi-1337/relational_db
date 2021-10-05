@@ -1,0 +1,28 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Wes and Rishi's Query Language
+- only select queries
+- not case sensitive
+- format based on basic sql commands
+
+FORMAT:
+
+sel {<col>,*} from <table>
+join <table> on <col>
+where <col> {<,>,=} <value>
+
+- entire query in one line
+- if more than one column, separate by commas
+  and no spaces
+  e.g 'id,name' not 'id, name'
+- seperate where clause by space
+  e.g 'x < 10', not 'x<10'
+
+MENU:
+
+tables     => show all table names
+pre-made  => show pre-made queries
+<1-9>     => run pre-made query number <1-9>
+format    => show expected query format
+help      => show this message again
+exit      => exit prompt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
