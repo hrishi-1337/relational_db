@@ -4,6 +4,8 @@ from sys import exit
 import os
 from termcolor import colored
 
+from src.performance.execution_plan import execute_query
+
 def send_query(table, join, join_col, where, where_clause):
     pass
 def get_root():
@@ -198,7 +200,7 @@ def parse_query(q):
             return
 
     print(colored('query passes parsing', 'green'))
-    send_query(table=table, join=join, join_col=join_col, where=where, where_clause=where_clause)
+    execute_query(table=table, join=join, join_col=join_col, where=where, where_clause=where_clause)
 
 
 def show_format():
