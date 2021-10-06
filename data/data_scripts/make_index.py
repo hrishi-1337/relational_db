@@ -8,20 +8,20 @@ import os, sys
 
 def make_index(table, column, dir):
     print("making index for table:", table, 'column:', column+'...')
-    index_df = pd.DataFrame(columns = ['ptr', column])                      # make empty index dataframe
+    index_df = pd.DataFrame(columns = ['ptr', column])                          # make empty index dataframe
     for blockfile in os.listdir(dir+'disk/'+table):                             # loop through all block files
         if blockfile[-4:] =='.csv':
-            block_num = blockfile[5:-4]                                         # get blobk number based on filename
-            df = pd.read_csv(dir+'disk/'+table+'/'+blockfile)                       # read block in
+            block_num = blockfile[5:-4]                                         # get block number based on filename
+            df = pd.read_csv(dir+'disk/'+table+'/'+blockfile)                   # read block in
             df['ptr'] = [block_num+'-'+str(i) for i in range(len(df.index))]    # add pointer column to dataframe
             df = df[['ptr',column]]                                             # reduce to dataframe to ptr and key
             index_df = index_df.append(df)                                      # append to main index df
 
     # sort index and write to csv file
     print('sorting...')
-    index_df = index_df.sort_values("Team")
-    index_df.to_csv(dir+'indexes/'+column+'.csv',index=False)
-    pfile = dir+'indexes/'+column+'.p'
+    index_df = index_df.sort_values(column)
+    index_df.to_csv(dir+'indexes/'+table+'_'+column+'.csv',index=False)
+    pfile = dir+'indexes/'+table+'_'+column+'.p'
     index_df.to_pickle(pfile)
     print("Made index.")
 
