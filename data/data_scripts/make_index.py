@@ -19,7 +19,7 @@ def make_index(table, column, dir):
 
     # sort index and write to csv file
     print('sorting...')
-    index_df = index_df.sort_values("Team")
+    index_df = index_df.sort_values(column)
     index_df.to_csv(dir+'indexes/'+column+'.csv',index=False)
     pfile = dir+'indexes/'+column+'.p'
     index_df.to_pickle(pfile)
