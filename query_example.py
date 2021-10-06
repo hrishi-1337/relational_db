@@ -8,15 +8,16 @@ with open(root+'/config/config.yaml') as f:
     cfg = yaml.safe_load(f)
 BLOCKSIZE = cfg['blocksize']
 
-make_blocks(root+'/data/develop/', BLOCKSIZE, csv=True, binary=True)
+# make_blocks(root+'/data/develop/', BLOCKSIZE, csv=True, binary=True)
 
-# for table,v in cfg['indexes'].items():
-#     for col in v:
-#         make_index('compact_'+table, col, root+'/data/develop/')
-#         # make_index(table, col, root+'/data/full/')
+# make_index('compact_athletes', 'NOC', root+'/data/develop/')
+# make_index('noc_regions', 'NOC', root+'/data/develop/')
+# make_index(table, col, root+'/data/full/')
 
 
 
 from src.queries.indexed_nested_loop import IndexedJoin
 
-j = IndexedJoin()
+j = IndexedJoin(data_version='develop', table1='noc_regions', table2='compact_athletic_events', join_col='NOC')
+data = j.join()
+print(data)

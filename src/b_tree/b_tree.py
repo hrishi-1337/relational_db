@@ -14,7 +14,7 @@ class Node:
         self.ptr = ptr              # ptr is a list of child nodes, unless it is leaf, then ptr is a str with block #
 
 class BTree:                                            # stores leaves for adding horizontal pointers
-    def __init__(self, index_file, num_children=10, binary=False):
+    def __init__(self, index_file, col,num_children=10, binary=False):
         # read in index from file
         if binary:
             self.df = pd.read_pickle(index_file+'.p').reset_index()
@@ -27,8 +27,10 @@ class BTree:                                            # stores leaves for addi
         self.num_children = num_children
 
         # initialize root of tree
-        self.root = Node(self.df.loc[mp]['Team'],[])
+        self.root = Node(self.df.loc[mp][col],[])
         self.leaves = []
+        self.count = 0
+        self.col = col
 
         # call recursive function to fill tree
         self.recursive_fill(self.root, 0, index_len)
@@ -36,6 +38,7 @@ class BTree:                                            # stores leaves for addi
         # add horizontal pointers to leaf nodes
         self.add_sideways_ptrs(self.root)
         self.update_ptrs()
+
 
     # recursively fill tree from pandas dataframe
     def recursive_fill(self, node, i, j):
@@ -48,14 +51,15 @@ class BTree:                                            # stores leaves for addi
             iter = i
             while iter < j:
                 data = self.df.loc[iter]
-                node.ptr.append(Node(data['Team'], data['ptr']))    # create leaf nodes
+                node.ptr.append(Node(data[self.col], data['ptr']))    # create leaf nodes
                 iter+=1
+                self.count+=1
 
         # if not leaf node
         else:
             inc = max(ceil((j-i)/self.num_children),self.num_children)
             for idx in range(i,j,inc):
-                node.ptr.append(Node(self.df.loc[idx]['Team'],[]))
+                node.ptr.append(Node(self.df.loc[idx][self.col],[]))
                 self.recursive_fill(node.ptr[-1],idx, min(idx+inc,j))
 
 
@@ -110,6 +114,12 @@ class BTree:                                            # stores leaves for addi
             count += 1
             temp = temp.next
         return count + 1
+
+    def first(self):
+        f = self.root
+        while not isinstance(f.ptr, str):
+            f = f.ptr[0]
+        return f
 
 
 # index_file = '../../data/develop/indexes/Team'
