@@ -30,7 +30,7 @@ def execute_query(table, join, join_col, where, where_clause):
         if cost1.iloc[0]['Nested Loop Join'] < cost2.iloc[0]['Nested Loop Join']:
             table.reverse()
         print("\n")
-        print(colored("Outer relation: " + table[0] + ", Inner relation: " + table[1]+" has the best estimated costs"))
+        print(colored("Optimum join relations :: Outer relation: " + table[0] + ", Inner relation: " + table[1], 'red'))
         print(colored('======= Nested Loop Join =======', 'red'))
         NestedLoop(data_version, table, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
         print("\n")

@@ -14,20 +14,25 @@ class BlockNestedLoop:
         self.where_op = where_op
         self.where_val = where_val
         self.DB_PATH = os.path.join(root, 'data', self.data_version, 'disk')
-        block_list = self.tables()
-        result = self.block_nested(block_list)
+        block_list, columns = self.tables()
+        result = self.block_nested(block_list, columns)
         print("Result: " )
         print(result.to_string(index=False))
 
     def tables(self):
         block_list = []
+        columns = {}
         for table in self.query_tables:
             table_path = os.path.join(self.DB_PATH, table)
             block_count = len(os.listdir(table_path))
-            block_list.append(int(block_count/2))
-        return block_list
+            block_list.append(int(block_count / 2))
+            with open(os.path.join(self.DB_PATH, table, 'block0.csv'), 'r') as f:
+                for line in f:
+                    columns[table] = line[:-1].split(",")
+                    break
+        return block_list, columns
 
-    def block_nested(self, block_list):
+    def block_nested(self, block_list, columns):
         start_time = time.time()
         result_df = pd.DataFrame()
         block_reads, row = 0, 0
@@ -40,11 +45,22 @@ class BlockNestedLoop:
                 for outer_index, outer_row in outer_block.iterrows():
                     for inner_index, inner_row in inner_block.iterrows():
                         if len(self.where_col) == 1:
-                            if outer_row[self.where_col[0]] == inner_row[self.where_col[0]] \
-                                    and inner_row[self.where_col[0]] == self.where_val[0] \
-                                    and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
-                                merge = pd.concat([outer_row, inner_row]).drop_duplicates()
-                                result_df = result_df.append(merge, ignore_index=True)
+                            if self.where_col[0] in columns[self.query_tables[0]] and self.where_col[0] in columns[self.query_tables[1]]:
+                                if outer_row[self.where_col[0]] == inner_row[self.where_col[0]] \
+                                        and inner_row[self.where_col[0]] == self.where_val[0] \
+                                        and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                                    merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+                                    result_df = result_df.append(merge, ignore_index=True)
+                            elif self.where_col[0] in columns[self.query_tables[0]]:
+                                if outer_row[self.where_col[0]] == self.where_val[0] \
+                                        and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                                    merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+                                    result_df = result_df.append(merge, ignore_index=True)
+                            elif self.where_col[0] in columns[self.query_tables[1]]:
+                                if inner_row[self.where_col[0]] == self.where_val[0] \
+                                        and inner_row["Athlete ID"] == outer_row["Athlete ID"]:
+                                    merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+                                    result_df = result_df.append(merge, ignore_index=True)
                         elif len(self.where_col) == 2:
                             if outer_row[self.where_col[0]] == inner_row[self.where_col[0]] \
                                     and outer_row[self.where_col[1]] == inner_row[self.where_col[1]] \

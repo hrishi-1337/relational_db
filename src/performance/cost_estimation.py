@@ -1,11 +1,14 @@
 import os.path
+import yaml
 import pandas as pd
 from definitions import root, BLOCKSIZE
 
 
 class CostEstimation:
     def blocks(self, tables):
-        DB_PATH = os.path.join(root, 'data', 'develop', 'disk')
+        with open('config/config.yaml') as f:
+            data_version = yaml.safe_load(f)['data_version']
+        DB_PATH = os.path.join(root, 'data', data_version, 'disk')
         block_count = {}
         for table in tables:
             table_path = os.path.join(DB_PATH, table)
@@ -20,7 +23,7 @@ class CostEstimation:
         outer_relations = (BLOCKSIZE * (block_count[tables[0]]-1)) + len(last_block.index)
         df.at['Block Transfers:', 'Nested Loop Join'] = \
             str((outer_relations*block_count[tables[1]])+block_count[tables[0]])
-        df.at['Seeks:', 'Nested Loop Join'] = str((outer_relations*block_count[tables[1]])+block_count[tables[0]])
+        df.at['Seeks:', 'Nested Loop Join'] = str(outer_relations+block_count[tables[0]])
         df.at['Block Transfers:', 'Block Nested Loop Join'] = \
             str((block_count[tables[0]]*block_count[tables[1]])+block_count[tables[0]])
         df.at['Seeks:', 'Block Nested Loop Join'] = str(2*block_count[tables[0]])

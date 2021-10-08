@@ -1,3 +1,5 @@
 1. select * from compact_athletes where NOC = CHN
 2. select * from compact_athletes,compact_athletic_events where NOC = CHN
-3. select * from compact_athletes,compact_athletic_events where NOC = CHN Age > 30
+3. select * from compact_athletes,compact_athletic_events where Season = Summer
+4. select * from compact_athletes,compact_athletic_events where City = Nagano
+6. select * from compact_athletes,compact_athletic_events where NOC = CHN Age > 30
