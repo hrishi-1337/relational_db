@@ -4,48 +4,58 @@ import time
 import pandas as pd
 from definitions import root
 
-class BlockNestedLoop:
-    def main(self):
-        DB_PATH = os.path.join(root, 'data', 'develop', 'disk')
-        NOC = "CHN"
-        tables = os.listdir(DB_PATH)
-        tables[:] = [x for x in tables if "bin" not in x]
-        block_list = self.tables(DB_PATH, tables)
-        result = self.block_nested(DB_PATH, tables, block_list, NOC)
-        print(result)
 
-    def tables(self, DB_PATH, tables):
+class BlockNestedLoop:
+    def __init__(self, data_version, tables, where, where_col, where_op, where_val):
+        self.data_version = data_version
+        self.query_tables = tables
+        self.where = where
+        self.where_col = where_col
+        self.where_op = where_op
+        self.where_val = where_val
+        self.DB_PATH = os.path.join(root, 'data', self.data_version, 'disk')
+        block_list = self.tables()
+        result = self.block_nested(block_list)
+        print("Result: " )
+        print(result.to_string(index=False))
+
+    def tables(self):
         block_list = []
-        for table in tables:
-            table_path = os.path.join(DB_PATH, table)
+        for table in self.query_tables:
+            table_path = os.path.join(self.DB_PATH, table)
             block_count = len(os.listdir(table_path))
             block_list.append(int(block_count/2))
         return block_list
 
-    def block_nested(self, DB_PATH, tables, block_list, NOC):
+    def block_nested(self, block_list):
         start_time = time.time()
         result_df = pd.DataFrame()
         block_reads, row = 0, 0
         for i in range(0, block_list[0]):
-            outer_block = pd.read_csv(DB_PATH+"/"+tables[0]+"/block"+str(i)+".csv")
+            outer_block = pd.read_csv(self.DB_PATH+"/"+self.query_tables[0]+"/block"+str(i)+".csv")
             block_reads += 1
             for j in range(0, block_list[1]):
-                inner_block = pd.read_csv(DB_PATH + "/" + tables[1] + "/block" + str(j) + ".csv")
+                inner_block = pd.read_csv(self.DB_PATH + "/" + self.query_tables[1] + "/block" + str(j) + ".csv")
                 block_reads += 1
                 for outer_index, outer_row in outer_block.iterrows():
                     for inner_index, inner_row in inner_block.iterrows():
-                        if outer_row["NOC"] == inner_row["NOC"] and inner_row["NOC"] == NOC\
-                                and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
-                            merge = pd.concat([outer_row, inner_row]).drop_duplicates()
-                            result_df = result_df.append(merge, ignore_index=True)
+                        if len(self.where_col) == 1:
+                            if outer_row[self.where_col[0]] == inner_row[self.where_col[0]] \
+                                    and inner_row[self.where_col[0]] == self.where_val[0] \
+                                    and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                                merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+                                result_df = result_df.append(merge, ignore_index=True)
+                        elif len(self.where_col) == 2:
+                            if outer_row[self.where_col[0]] == inner_row[self.where_col[0]] \
+                                    and outer_row[self.where_col[1]] == inner_row[self.where_col[1]] \
+                                    and inner_row[self.where_col[0]] == self.where_val[0] \
+                                    and inner_row[self.where_col[1]] == self.where_val[1] \
+                                    and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                                merge = pd.concat([outer_row, inner_row]).drop_duplicates()
+                                result_df = result_df.append(merge, ignore_index=True)
                     row += 1
         run_time = time.time() - start_time
         print("Runtime: "+"%.3f" % run_time+ " Seconds")
         print("Block Transfers: " +str(block_reads))
         print("Seeks: " + str(2*block_list[0]))
         return result_df
-
-
-if __name__ == "__main__":
-    block_nested_loop = BlockNestedLoop()
-    block_nested_loop.main()

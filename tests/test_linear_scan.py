@@ -1,11 +1,7 @@
 import pytest
-import os
 from src.queries.linear_scan import LinearScan
-from definitions import root
 
-table = 'compact_athletes'
-table_path = os.path.join(root, 'data', 'develop', 'disk', table)
-obj = LinearScan()
+obj = LinearScan("develop", ['compact_athletes'], True, "NOC", "=", "CHN")
 
 def test_nested():
-    assert obj.linear_scan(table_path, 19, "CHN").iloc[0]['Name'] == 'A Dijiang'
+    assert obj.linear_scan( 19).iloc[0]['Name'] == 'A Dijiang'

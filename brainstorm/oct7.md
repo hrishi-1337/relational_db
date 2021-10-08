@@ -1,0 +1,3 @@
+- I have generalized the joins and scans for equality operations and a single where clause.
+- I also changed the syntax of the query a bit in which it you no longer have to specify if the query is a join or a select. The operation will happen based on the number of tables in the query.
+- We should maybe just stick to == operations in the joins and scans since we are short on time. >, < will need more work

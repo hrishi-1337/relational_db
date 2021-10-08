@@ -1,1 +1,3 @@
-1. select * from compact_athletes
+1. select * from compact_athletes where NOC = CHN
+2. select * from compact_athletes,compact_athletic_events where NOC = CHN
+3. select * from compact_athletes,compact_athletic_events where NOC = CHN Age > 30
