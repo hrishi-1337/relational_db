@@ -72,7 +72,6 @@ def get_cols(tableL):
     if not cols:
         print(colored('error:', 'red'), end=" ")
         print(f"can't retrieve columns from {table}")
-    cols = [x.lower() for x in cols]
     return cols
 
 
@@ -80,7 +79,7 @@ def parse_query(q):
     ql = q.split(' ')
     join = False
     join_col = None
-    where = None
+    where = False
     where_clause = {'cols': [], 'ops': [], 'vals': []}
     tables = get_tables_list()
     if 'from' not in ql:
@@ -101,9 +100,12 @@ def parse_query(q):
             print(f'the table {ql[3]} is not on disk')
             print_tables()
             return
+
     query_tables = ql[3].split(",")
+    table_cols = get_cols(query_tables)
     rows = ql[1].split(",")
-    table_cols = get_cols([table]) + ['*']
+    if rows == ['*']:
+        rows = table_cols
 
     if 'join' in ql:
         idx = ql.index('join')
@@ -136,7 +138,7 @@ def parse_query(q):
             print(colored('error:', 'red'), end=" ")
             print(f'7th words needs to be \'on\'')
             return
-        join_col = ql[7].replace("_", " ").replace("-", " ")
+        join_col = ql[7].replace("_", " ").replace("-", " ").split(",")
         if join_col not in table_cols:
             print(colored('error:', 'red'), end=" ")
             print(f'join column {join_col} needs to be in both tables')
@@ -200,8 +202,8 @@ def parse_query(q):
             #         return
             where = True
 
-    poss = ['select', 'from', 'join', 'on', 'where', join, join_col, ",".join(query_tables)] + where_clause['cols'] + \
-           where_clause['ops'] + where_clause['vals'] + rows
+    poss = ['select', 'from', 'join', 'on', 'where', join, join_col, ",".join(query_tables), ",".join(rows)] + where_clause['cols'] + \
+           where_clause['ops'] + where_clause['vals'] +["*"]
     for w in ql:
         if w not in poss:
             print(colored('error:', 'red'), end=" ")
@@ -209,7 +211,7 @@ def parse_query(q):
             return
 
     print(colored('query passes parsing', 'green'))
-    execute_query(table=query_tables, join=join, join_col=join_col, where=where, where_clause=where_clause)
+    execute_query(table=query_tables, rows=rows, where=where, where_clause=where_clause)
 
 
 def show_format():

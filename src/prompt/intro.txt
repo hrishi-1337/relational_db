@@ -1,21 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Wes and Rishi's Query Language
 - only select queries
-- not case sensitive
+- case sensitive
 - format based on basic sql commands
 
 FORMAT:
 
-sel {<col>,*} from <table>
-join <table> on <col>
-where <col> {<,>,=} <value>
+select {<col>,*} from {<table>} where <col> {=} <value>
+
 
 - entire query in one line
 - if more than one column, separate by commas
   and no spaces
   e.g 'id,name' not 'id, name'
+- replace spaces in values with underscore
+  e.g 'Alpine Skiing' as 'Alpine_Skiing'
 - seperate where clause by space
-  e.g 'x < 10', not 'x<10'
+  e.g 'x = 10', not 'x=10'
 
 MENU:
 

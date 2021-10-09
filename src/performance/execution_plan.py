@@ -8,7 +8,7 @@ from definitions import data_version
 from termcolor import colored
 
 
-def execute_query(table, join, join_col, where, where_clause):
+def execute_query(table, rows, where, where_clause):
     # table:        list of tables
     # join:         table to join on, False if no join
     # join_col:     column to join on (joins for equal column attributes), None if no join
@@ -32,13 +32,13 @@ def execute_query(table, join, join_col, where, where_clause):
         print("\n")
         print(colored("Optimum join relations :: Outer relation: " + table[0] + ", Inner relation: " + table[1], 'red'))
         print(colored('======= Nested Loop Join =======', 'red'))
-        NestedLoop(data_version, table, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        NestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
         print("\n")
         print(colored('======= Block-Nested Loop Join =======', 'red'))
-        BlockNestedLoop(data_version, table, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        BlockNestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
     else:
         print(colored('======= Linear Scan =======', 'red'))
-        LinearScan(data_version, table, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        LinearScan(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
 
 
 ### ops
