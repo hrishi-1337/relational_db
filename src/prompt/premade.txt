@@ -3,3 +3,4 @@
 3. select * from compact_athletes,compact_athletic_events where Season = Summer
 4. select Name,Sex,Age,Height,Weight,Team,NOC,Games,Year,Season,City,Sport from compact_athletes,compact_athletic_events where City = Nagano
 5. select * from compact_athletes,compact_athletic_events
+6. select * from compact_athletes,compact_athletic_events where Season = Alpine_Skiing

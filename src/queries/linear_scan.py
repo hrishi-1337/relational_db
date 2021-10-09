@@ -17,7 +17,10 @@ class LinearScan:
         result = self.linear_scan(block_count)
         print(self.rows)
         print("Result: ")
-        print(result[self.rows].to_string(index=False))
+        try:
+            print(result[self.rows].to_string(index=False))
+        except Exception as e:
+            print("No results found")
 
     def linear_scan(self, block_count):
         start_time = time.time()

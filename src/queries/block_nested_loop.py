@@ -18,7 +18,10 @@ class BlockNestedLoop:
         block_list, columns = self.tables()
         result = self.block_nested(block_list, columns)
         print("Result: " )
-        print(result[self.rows].to_string(index=False))
+        try:
+            print(result[self.rows].to_string(index=False))
+        except Exception as e:
+            print("No results found")
 
     def tables(self):
         block_list = []

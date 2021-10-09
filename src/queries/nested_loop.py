@@ -17,9 +17,11 @@ class NestedLoop:
         self.DB_PATH = os.path.join(root, 'data', self.data_version, 'disk')
         block_list, columns = self.tables()
         result = self.nested(block_list, columns)
-        print(self.where)
         print("Result: ")
-        print(result[self.rows].to_string(index=False))
+        try:
+            print(result[self.rows].to_string(index=False))
+        except Exception as e:
+            print("No results found")
 
     def tables(self):
         block_list = []
