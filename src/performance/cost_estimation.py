@@ -6,14 +6,20 @@ from definitions import root, BLOCKSIZE
 
 class CostEstimation:
     def blocks(self, tables):
-        with open('config/config.yaml') as f:
-            data_version = yaml.safe_load(f)['data_version']
+        # with open('config/config.yaml') as f:
+        #     data_version = yaml.safe_load(f)['data_version']
+        data_version ='full'
+        for t in tables:
+            if 'compact' in t:
+                data_version = 'develop'
+            path = 'data/'+data_version+'/disk/'+t
+            num = len(os.listdir(path))
         DB_PATH = os.path.join(root, 'data', data_version, 'disk')
         block_count = {}
         for table in tables:
             table_path = os.path.join(DB_PATH, table)
             blocks = len(os.listdir(table_path))
-            block_count[table] = int(blocks / 2)
+            block_count[table] = int(blocks)
         return block_count, DB_PATH
 
     def cost(self, tables):
@@ -35,8 +41,8 @@ class CostEstimation:
 
         # index loop join costs
         df.at['Block Transfers:', 'Indexed Loop Join'] = \
-            str(max(block_count[tables[0]],block_count[tables[1]]))#((block_count[tables[0]]*block_count[tables[1]])+block_count[tables[0]])
-        df.at['Seeks:', 'Indexed Loop Join'] = str(2*block_count[tables[0]])
+            str(block_count[tables[0]]+block_count[tables[1]])#((block_count[tables[0]]*block_count[tables[1]])+block_count[tables[0]])
+        df.at['Seeks:', 'Indexed Loop Join'] = str(2)
 
 
         print(df.to_string())

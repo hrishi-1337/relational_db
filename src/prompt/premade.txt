@@ -1,7 +1,14 @@
-1. select * from compact_athletes where NOC = CHN
-2. select * from compact_athletes,compact_athletic_events where NOC = CHN
-3. select * from compact_athletes,compact_athletic_events where Season = Summer
-4. select Name,Sex,Age,Height,Weight,Team,NOC,Games,Year,Season,City,Sport from compact_athletes,compact_athletic_events where City = Nagano
-5. select * from compact_athletes,compact_athletic_events
-6. select * from compact_athletes,compact_athletic_events where Season = Alpine_Skiing
-7. select * from athletes where NOC = CHN
+Queries on Small Dataset
+01. select * from compact_athletes where NOC = CHN
+02. select * from compact_athletes,compact_athletic_events where NOC = CHN
+03. select * from compact_athletes,compact_athletic_events where Season = Summer
+04. select Name,Sex,Age,Height,Weight,Team,NOC,Games,Year,Season,City,Sport from compact_athletes,compact_athletic_events where City = Nagano
+05. select * from compact_athletes,compact_athletic_events
+06. select * from compact_athletes,compact_athletic_events where Season = Alpine_Skiing
+07. select * from compact_athletes where Athlete_ID = 69974
+
+
+Queries on Large Dataset
+08. select * from athletes where NOC = CHN
+09. select * from athletes,athletic_events where NOC = CHN
+10. select * from athletes where Athlete_ID = 69974

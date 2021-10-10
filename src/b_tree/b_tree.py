@@ -39,6 +39,14 @@ class BTree:                                            # stores leaves for addi
         self.add_sideways_ptrs(self.root)
         self.update_ptrs()
 
+    def get_start_node(self, node, val):
+        if isinstance(node.ptr,str):
+            return node
+        for i in range(len(node.ptr)-1, -1, -1):
+            if node.ptr[i].key <= val or i == 0:
+                return self.get_start_node(node.ptr[i], val)
+                break
+
 
     # recursively fill tree from pandas dataframe
     def recursive_fill(self, node, i, j):

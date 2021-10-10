@@ -6,6 +6,7 @@ from termcolor import colored
 from sys import exit
 from pprint import pprint
 import time
+from definitions import BINARY
 
 def get_cols(table):
     cols = []
@@ -138,7 +139,10 @@ class IndexedJoin:
         #   - saves outer table pointer in each row
         df = pd.DataFrame()
         block_num = 0
-        current_block = pd.read_csv(self.inner_path+'/block'+str(block_num)+'.csv')
+        if BINARY:
+            current_block = pd.read_pickle(self.inner_path+'_bin'+ "/block" + str(block_num) + ".p").reset_index()
+        else:
+            current_block = pd.read_csv(self.inner_path+'/block'+str(block_num)+'.csv')
         self.block_reads +=1
         for _, row in ptrs_df.iterrows():
             block = row['inner']
@@ -147,7 +151,10 @@ class IndexedJoin:
                 self.seeks +=1
             if block_num != block:
                 block_num = block
-                current_block = pd.read_csv(self.inner_path+'/block'+str(block_num)+'.csv')
+                if BINARY:
+                    current_block = pd.read_pickle(self.inner_path+'_bin'+ "/block" + str(block_num) + ".p").reset_index()
+                else:
+                    current_block = pd.read_csv(self.inner_path+'/block'+str(block_num)+'.csv')
                 self.block_reads += 1
             new_row = current_block.loc[idx].copy()
             new_row['ptr_block'] = row['outer']
@@ -160,7 +167,10 @@ class IndexedJoin:
         # new dataframe to load fully joined data
         final_df = pd.DataFrame()
         block_num = 0
-        current_block = pd.read_csv(self.outer_path+'/block'+str(block_num)+'.csv')
+        if BINARY:
+            current_block = pd.read_pickle(self.outer_path+'_bin'+ "/block" + str(block_num) + ".p").reset_index()
+        else:
+            current_block = pd.read_csv(self.outer_path+'/block'+str(block_num)+'.csv')
         self.block_reads +=1
         for df_idx, row in df.iterrows():
             block = int(row['ptr_block'])
@@ -169,7 +179,10 @@ class IndexedJoin:
                 self.seeks +=1
             if block_num != block:
                 block_num = block
-                current_block = pd.read_csv(self.outer_path+'/block'+str(block_num)+'.csv')
+                if BINARY:
+                    current_block = pd.read_pickle(self.outer_path+'_bin'+ "/block" + str(block_num) + ".p").reset_index()
+                else:
+                    current_block = pd.read_csv(self.outer_path+'/block'+str(block_num)+'.csv')
                 self.block_reads += 1
             new_row = current_block.loc[idx]
             new_row = pd.concat([new_row,df.loc[df_idx]]).to_dict()
