@@ -13,12 +13,11 @@ class LinearScan:
         self.where_op = where_op
         self.where_val = [i.replace("_", " ") for i in where_val]
         self.table_path = os.path.join(root, 'data', self.data_version, 'disk', table[0])
-        block_count = int(len(os.listdir(self.table_path))/2)
+        block_count = int(len(os.listdir(self.table_path)))
         result = self.linear_scan(block_count)
-        print(self.rows)
         print("Result: ")
         try:
-            print(result[self.rows].to_string(index=False))
+            print(result[self.rows])#.to_string(index=False))
         except Exception as e:
             print("No results found")
 
@@ -26,10 +25,10 @@ class LinearScan:
         start_time = time.time()
         result = pd.DataFrame()
         block_reads = 0
-        for i in range(0, block_count-1):
+        for i in range(block_count-1):
             block = pd.read_csv(self.table_path + "/block" + str(i) + ".csv")
             block_reads += 1
-            for j in range(0, BLOCKSIZE-1):
+            for j in range(BLOCKSIZE-1):
                     if block.iloc[j][self.where_col[0]] == self.where_val[0]:
                         result = result.append(block.iloc[j], ignore_index=True)
         run_time = time.time() - start_time

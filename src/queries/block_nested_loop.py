@@ -19,7 +19,7 @@ class BlockNestedLoop:
         result = self.block_nested(block_list, columns)
         print("Result: " )
         try:
-            print(result[self.rows].to_string(index=False))
+            print(result[self.rows])#.to_string(index=False))
         except Exception as e:
             print("No results found")
 

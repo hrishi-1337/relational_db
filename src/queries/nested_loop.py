@@ -19,7 +19,7 @@ class NestedLoop:
         result = self.nested(block_list, columns)
         print("Result: ")
         try:
-            print(result[self.rows].to_string(index=False))
+            print(result[self.rows])#.to_string(index=False))
         except Exception as e:
             print("No results found")
 
@@ -77,4 +77,3 @@ class NestedLoop:
         print("Block Transfers: " + str(block_reads))
         print("Seeks: " + str(row + block_list[0]))
         return result_df
-
