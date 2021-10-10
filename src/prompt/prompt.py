@@ -13,7 +13,7 @@ def send_query(table, join, join_col, where, where_clause):
 
 def get_root():
     with open('config/config.yaml') as f:
-        root = yaml.load(f)['rootdir']
+        root = yaml.safe_load(f)['rootdir']
     return root
 
 
@@ -41,6 +41,17 @@ def load_premade():
         for line in f:
             p.append(line[:-1])
     return p
+
+def run_preamde(inp):
+    premade = load_premade()
+    idx = int(inp)-1
+    if idx < 0 or idx >= len(premade):
+        print(colored('error:', 'red'), end=" ")
+        print(f'there is not a pre-made query for number {inp}')
+        return
+
+    premade = [x[3:] for x in premade]
+    parse_query(premade[idx])
 
 
 def get_tables_list():
@@ -237,6 +248,8 @@ def prompt():
 
         if inp == 'exit':
             break
+        if inp.isdigit():
+            run_preamde(inp)
         elif inp == '':
             continue
         elif inp == 'tables':

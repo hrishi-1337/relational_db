@@ -6,6 +6,7 @@ from src.performance.cost_estimation import CostEstimation
 from definitions import data_version
 
 from termcolor import colored
+import os
 
 
 def execute_query(table, rows, where, where_clause):
@@ -19,6 +20,14 @@ def execute_query(table, rows, where, where_clause):
     #                       vals: value to compare data to
     #                  these are in a dict so there could be more than 1 where clause
     #                   for example: where NOC = 'ARG' Age > 30
+    data_version = 'full'
+    for t in table:
+        if 'compact' in t:
+            data_version = 'develop'
+        path = 'data/'+data_version+'/disk/'+t
+        num = len(os.listdir(path))
+        print(f"table: {t} || blocks: {num}")
+
     obj = CostEstimation()
     if len(table) > 1:
         print(colored('======= Estimated Costs =======', 'red'))
@@ -36,13 +45,15 @@ def execute_query(table, rows, where, where_clause):
         print("\n")
         print(colored('======= Block-Nested Loop Join =======', 'red'))
         BlockNestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        print(colored('======= Indexed Loop Join =======', 'red'))
+        IndexedJoin(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
     else:
         print(colored('======= Linear Scan =======', 'red'))
         LinearScan(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
 
 
 ### ops
-### we can pas
+### we can pass
 def lt(item1, item2):
     if item1<item2:
         return True

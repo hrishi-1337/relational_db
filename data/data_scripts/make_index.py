@@ -7,6 +7,7 @@ import os, sys
 
 
 def make_index(table, column, dir):
+    cname = column.replace(" ", "_")
     print("making index for table:", table, 'column:', column+'...')
     index_df = pd.DataFrame(columns = ['ptr', column])                          # make empty index dataframe
     for blockfile in os.listdir(dir+'disk/'+table):                             # loop through all block files
@@ -20,8 +21,8 @@ def make_index(table, column, dir):
     # sort index and write to csv file
     print('sorting...')
     index_df = index_df.sort_values(column)
-    index_df.to_csv(dir+'indexes/'+table+'_'+column+'.csv',index=False)
-    pfile = dir+'indexes/'+table+'_'+column+'.p'
+    index_df.to_csv(dir+'indexes/'+table+'_'+cname+'.csv',index=False)
+    pfile = dir+'indexes/'+table+'_'+cname+'.p'
     index_df.to_pickle(pfile)
     print("Made index.")
 
