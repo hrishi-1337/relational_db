@@ -6,5 +6,7 @@ build_blocks:
 data_version: develop
 indexes:
   athletes:
-  - Team
+  - Athlete_ID
+  athletic_events:
+  - Athlete_ID
 rootdir: /Users/wesrobbins/Desktop/fall2021/540/hw1-repo

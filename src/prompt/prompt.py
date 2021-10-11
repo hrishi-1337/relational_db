@@ -3,12 +3,9 @@ import yaml
 from sys import exit
 import os
 from termcolor import colored
-
+from definitions import root
 from src.performance.execution_plan import execute_query
 
-
-def send_query(table, join, join_col, where, where_clause):
-    pass
 
 
 def get_root():
@@ -33,13 +30,21 @@ def print_tables():
         print(i)
     print()
 
+def print_premade():
+    with open(root + '/src/prompt/premade.txt', 'r') as f:
+        for line in f:
+            if line[0] == 'Q':
+                print(colored(line, 'yellow'), end="")
+            else:
+                print(line, end="")
 
 def load_premade():
     p = []
     root = get_root()
     with open(root + '/src/prompt/premade.txt', 'r') as f:
         for line in f:
-            p.append(line[:-1])
+            if line[0].isdigit():
+                p.append(line[:-1])
     return p
 
 def run_preamde(inp):
@@ -50,7 +55,7 @@ def run_preamde(inp):
         print(f'there is not a pre-made query for number {inp}')
         return
 
-    premade = [x[3:] for x in premade]
+    premade = [x[4:] for x in premade]
     parse_query(premade[idx])
 
 
@@ -255,8 +260,7 @@ def prompt():
         elif inp == 'tables':
             print_tables()
         elif inp == 'pre-made':
-            for i in load_premade():
-                print(i)
+            print_premade()
         elif inp == 'format':
             show_format()
 
