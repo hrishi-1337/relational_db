@@ -60,7 +60,7 @@ class IndexedJoin:
 
         # metrics
         self.block_reads = 0
-        self.seeks = 0
+        self.seeks = 2                      # at least one for each table
 
         # concat paths to index
         index1_path = os.path.join('data',data_version,'indexes',self.table1+'_'+join_col)

@@ -10,10 +10,10 @@ BLOCKSIZE = cfg['blocksize']
 
 # make_blocks(root+'/data/develop/', BLOCKSIZE, csv=True, binary=True)
 
-make_index('compact_athletes', 'NOC', root+'/data/develop/')
-make_index('noc_regions', 'NOC', root+'/data/develop/')
-make_index('compact_athletes', 'Athlete ID', root+'/data/develop/')
-make_index('compact_athletic_events', 'Athlete ID', root+'/data/develop/')
+# make_index('compact_athletes', 'NOC', root+'/data/develop/')
+# make_index('noc_regions', 'NOC', root+'/data/develop/')
+# make_index('compact_athletes', 'Athlete ID', root+'/data/develop/')
+# make_index('compact_athletic_events', 'Athlete ID', root+'/data/develop/')
 # make_index(table, col, root+'/data/full/')
 
 # make_index('athletes', 'NOC', root+'/data/full/')
@@ -23,3 +23,8 @@ make_index('compact_athletic_events', 'Athlete ID', root+'/data/develop/')
 # j = IndexedJoin(data_version='develop', table1='noc_regions', table2='compact_athletic_events', join_col='NOC')
 # data = j.join()
 # print(data)
+
+from src.b_tree.b_tree import BTree
+index_path = 'data/full/indexes/athletes_NOC'
+tree = BTree(index_path, 'NOC')
+tree.horizontal_print()
