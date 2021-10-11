@@ -36,7 +36,7 @@ class LinearScan:
             else:
                 block = pd.read_csv(self.table_path + "/block" + str(i) + ".csv")
             block_reads += 1
-            for j in range(BLOCKSIZE-1):
+            for j in range(BLOCKSIZE):
                     if block.iloc[j][self.where_col[0]] == self.where_val[0]:
                         result = result.append(block.iloc[j], ignore_index=True)
         run_time = time.time() - start_time

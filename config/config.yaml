@@ -1,4 +1,4 @@
-binary: true
+binary: false
 blocksize: 10
 build_blocks:
   binary: true
