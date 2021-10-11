@@ -97,8 +97,6 @@ class IndexedJoin:
         result = self.join()
         print("Result: " )
         try:
-            # print(result[self.rows].to_string(index=False))
-            assert isinstance(result, pd.DataFrame)
             print(result[self.rows])
         except Exception as e:
             print("No results found")
@@ -197,7 +195,8 @@ class IndexedJoin:
         print("Block Transfers: " +str(self.block_reads))
         print("Seeks:", self.seeks)
 
-        return final_df
+        if len(final_df.index):
+            return final_df
 
     def filter(self, df, where_col, where_val):
         for col, val in zip(where_col, where_val):

@@ -46,11 +46,11 @@ def execute_query(table, rows, where, where_clause):
             table.reverse()
         print("\n")
         print(colored("Optimum join relations :: Outer relation: " + table[0] + ", Inner relation: " + table[1], 'red'))
-        # print(colored('======= Nested Loop Join =======', 'red'))
-        # NestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
-        # print("\n")
-        # print(colored('======= Block-Nested Loop Join =======', 'red'))
-        # BlockNestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        print(colored('======= Nested Loop Join =======', 'red'))
+        NestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        print("\n")
+        print(colored('======= Block-Nested Loop Join =======', 'red'))
+        BlockNestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
         print(colored('======= Indexed Loop Join =======', 'red'))
         idx = True
         for t in table:
@@ -63,8 +63,8 @@ def execute_query(table, rows, where, where_clause):
 
 
     else:
-        # print(colored('======= Linear Scan =======', 'red'))
-        # LinearScan(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        print(colored('======= Linear Scan =======', 'red'))
+        LinearScan(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
         print(colored('======= Indexed Scan =======', 'red'))
         if not where:
             print("Not running indexed scan since there is no where clause")

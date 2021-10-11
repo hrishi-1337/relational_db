@@ -10,13 +10,13 @@ BLOCKSIZE = cfg['blocksize']
 
 # make_blocks(root+'/data/develop/', BLOCKSIZE, csv=True, binary=True)
 
-# make_index('compact_athletes', 'NOC', root+'/data/develop/')
-# make_index('noc_regions', 'NOC', root+'/data/develop/')
+make_index('compact_athletes', 'NOC', root+'/data/develop/')
+make_index('noc_regions', 'NOC', root+'/data/develop/')
 make_index('compact_athletes', 'Athlete ID', root+'/data/develop/')
 make_index('compact_athletic_events', 'Athlete ID', root+'/data/develop/')
 # make_index(table, col, root+'/data/full/')
 
-
+# make_index('athletes', 'NOC', root+'/data/full/')
 
 # from src.queries.indexed_nested_loop import IndexedJoin
 #

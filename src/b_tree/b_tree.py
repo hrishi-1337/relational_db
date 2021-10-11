@@ -42,10 +42,16 @@ class BTree:                                            # stores leaves for addi
     def get_start_node(self, node, val):
         if isinstance(node.ptr,str):
             return node
-        for i in range(len(node.ptr)-1, -1, -1):
-            if node.ptr[i].key <= val or i == 0:
-                return self.get_start_node(node.ptr[i], val)
-                break
+        elif isinstance(node.ptr[0].ptr,str):
+            for i in range(len(node.ptr)):
+                if node.ptr[i].key == val:
+                    return self.get_start_node(node.ptr[i], val)
+                    break
+        else:
+            for i in range(len(node.ptr)-1, -1, -1):
+                if node.ptr[i].key <= val or i == 0:
+                    return self.get_start_node(node.ptr[i], val)
+                    break
 
 
     # recursively fill tree from pandas dataframe
