@@ -12,4 +12,4 @@ Queries on Large Dataset
 08. select * from athletes where NOC = CHN
 09. select * from athletes,athletic_events where NOC = CHN
 10. select * from athletes where Athlete_ID = 69974
-11. select * from athletes where NOC = CHN
+11. select * from athletes where NOC = SUD

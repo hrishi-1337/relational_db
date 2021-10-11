@@ -42,9 +42,9 @@ class IndexedScan:
 
 
         # get starting node
-        start_node  = btree.get_start_node(btree.root, self.where_val[0])
-        print(start_node.key)
-        print(start_node.ptr)
+        start_node = btree.get_start_node(btree.root, self.where_val[0])
+        # print(start_node.key)
+        # print(start_node.ptr)
 
         block_count = int(len(os.listdir(self.table_path)))
         result = self.index_scan(start_node)
@@ -59,9 +59,10 @@ class IndexedScan:
         start_time = time.time()
         block_num = int(start_node.ptr.split("-")[0])
         ptrs_df = pd.DataFrame(columns=['block','idx'])
-        while node.key == self.where_val[0]:
-            b,i = parse_ptr_string(node.ptr)
-            ptrs_df = ptrs_df.append({'idx':i,'block':b}, ignore_index=True)
+        while node.key <= self.where_val[0]:
+            if node.key == self.where_val[0]:
+                b,i = parse_ptr_string(node.ptr)
+                ptrs_df = ptrs_df.append({'idx':i,'block':b}, ignore_index=True)
             node = node.next
             if not node:
                 break
@@ -69,7 +70,6 @@ class IndexedScan:
 
         ptrs_df = ptrs_df.sort_values('block')
         ptrs_df = ptrs_df.reset_index()
-        print(ptrs_df)
         final_df = pd.DataFrame()
         block_num = 0
         if BINARY:
