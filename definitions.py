@@ -6,6 +6,7 @@ with open(root+'/config/config.yaml') as f:
     cfg = yaml.safe_load(f)
 BLOCKSIZE = cfg['blocksize']
 BINARY = cfg['binary']
+KEY = cfg['key']
 data_version = cfg['data_version']
 cfg['rootdir'] = root
 print("CONFIG")

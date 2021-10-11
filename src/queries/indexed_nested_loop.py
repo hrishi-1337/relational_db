@@ -193,7 +193,7 @@ class IndexedJoin:
             final_df = self.filter(final_df, self.where_col, self.where_val)
 
         run_time = time.time() - start_time
-        print("Runtime: "+"%.3f" % run_time+ " Seconds")
+        print("Runtime: %.3f Seconds " % run_time)
         print("Block Transfers: " +str(self.block_reads))
         print("Seeks:", self.seeks)
 

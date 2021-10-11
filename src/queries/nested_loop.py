@@ -2,7 +2,7 @@
 import os.path
 import time
 import pandas as pd
-from definitions import root
+from definitions import root,KEY
 
 
 class NestedLoop:
@@ -49,31 +49,31 @@ class NestedLoop:
                     inner_block = pd.read_csv(self.DB_PATH + "/" + self.query_tables[1] + "/block" + str(n) + ".csv")
                     block_reads += 1
                     for inner_index, inner_row in inner_block.iterrows():
-                        if self.where == True:
+                        if self.where:
                             if self.where_col[0] in columns[self.query_tables[0]] and self.where_col[0] in columns[self.query_tables[1]]:
                                 if outer_row[self.where_col[0]] == inner_row[self.where_col[0]] \
                                         and inner_row[self.where_col[0]] == self.where_val[0] \
-                                        and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                                        and outer_row[KEY] == inner_row[KEY]:
                                     merge = pd.concat([outer_row, inner_row]).drop_duplicates()
                                     result_df = result_df.append(merge.to_dict(), ignore_index=True)
                             elif self.where_col[0] in columns[self.query_tables[0]]:
                                 if outer_row[self.where_col[0]] == self.where_val[0] \
-                                        and outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                                        and outer_row[KEY] == inner_row[KEY]:
                                     merge = pd.concat([outer_row, inner_row]).drop_duplicates()
                                     result_df = result_df.append(merge.to_dict(), ignore_index=True)
                             elif self.where_col[0] in columns[self.query_tables[1]]:
                                 if inner_row[self.where_col[0]] == self.where_val[0] \
-                                        and inner_row["Athlete ID"] == outer_row["Athlete ID"]:
+                                        and inner_row[KEY] == outer_row[KEY]:
                                     merge = pd.concat([outer_row, inner_row]).drop_duplicates()
                                     result_df = result_df.append(merge.to_dict(), ignore_index=True)
-                        elif self.where == False:
-                            if outer_row["Athlete ID"] == inner_row["Athlete ID"]:
+                        else:
+                            if outer_row[KEY] == inner_row[KEY]:
                                 merge = pd.concat([outer_row, inner_row]).drop_duplicates()
                                 result_df = result_df.append(merge.to_dict(), ignore_index=True)
                     n += 1
                 row += 1
         run_time = time.time() - start_time
-        print("Runtime: " + "%.3f" % run_time + " Seconds")
+        print("Runtime: %.3f Seconds " % run_time)
         print("Block Transfers: " + str(block_reads))
         print("Seeks: " + str(row + block_list[0]))
         return result_df

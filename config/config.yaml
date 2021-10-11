@@ -9,4 +9,5 @@ indexes:
   - Athlete_ID
   athletic_events:
   - Athlete_ID
-rootdir: /Users/wesrobbins/Desktop/fall2021/540/hw1-repo
+key: Athlete ID
+rootdir: C:\Users\Hrishi\PycharmProjects\relational_db
