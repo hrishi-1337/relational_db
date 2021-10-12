@@ -4,6 +4,7 @@ build_blocks:
   binary: true
   csv: true
 data_version: develop
+experiment_mode: true
 indexes:
   athletes:
   - Athlete_ID
@@ -11,4 +12,4 @@ indexes:
   athletic_events:
   - Athlete_ID
 key: Athlete ID
-rootdir: C:\Users\Hrishi\PycharmProjects\relational_db
+rootdir: /Users/wesrobbins/Desktop/fall2021/540/hw1-repo

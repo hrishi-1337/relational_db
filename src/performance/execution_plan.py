@@ -4,7 +4,7 @@ from src.queries.indexed_nested_loop import IndexedJoin
 from src.queries.linear_scan import LinearScan
 from src.queries.indexed_scan import IndexedScan
 from src.performance.cost_estimation import CostEstimation
-from definitions import data_version, BINARY
+from definitions import data_version, BINARY,  MODE
 
 from termcolor import colored
 import os
@@ -46,20 +46,23 @@ def execute_query(table, rows, where, where_clause):
             table.reverse()
         print("\n")
         print(colored("Optimum join relations :: Outer relation: " + table[0] + ", Inner relation: " + table[1], 'red'))
-        print(colored('======= Nested Loop Join =======', 'red'))
-        NestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
-        print("\n")
-        print(colored('======= Block-Nested Loop Join =======', 'red'))
-        BlockNestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
-        print(colored('======= Indexed Loop Join =======', 'red'))
-        idx = True
-        for t in table:
-            if not os.path.exists(os.path.join('data',data_version,'indexes',t+'_'+join_col+'.csv')):
-                idx = False
-                print(f"Cannot run index join since index does not exist for path:")
-                print(os.path.join('data',data_version,'indexes',t+'_'+join_col+'.csv'))
-        if idx:
-            IndexedJoin(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        if MODE:
+            print(colored('======= Nested Loop Join =======', 'red'))
+            NestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+            print("\n")
+            print(colored('======= Block-Nested Loop Join =======', 'red'))
+            BlockNestedLoop(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+            print(colored('======= Indexed Loop Join =======', 'red'))
+            idx = True
+            for t in table:
+                if not os.path.exists(os.path.join('data',data_version,'indexes',t+'_'+join_col+'.csv')):
+                    idx = False
+                    print(f"Cannot run index join since index does not exist for path:")
+                    print(os.path.join('data',data_version,'indexes',t+'_'+join_col+'.csv'))
+            if idx:
+                IndexedJoin(data_version, table, rows, where, where_clause['cols'], where_clause['ops'], where_clause['vals'])
+        else:
+            pass
 
 
     else:
@@ -75,4 +78,3 @@ def execute_query(table, rows, where, where_clause):
             else:
                 print(f"Not running Indexed Scan because path index does not exists:")
                 print(idx_path)
-

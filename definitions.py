@@ -7,6 +7,7 @@ with open(root+'/config/config.yaml') as f:
 BLOCKSIZE = cfg['blocksize']
 BINARY = cfg['binary']
 KEY = cfg['key']
+MODE = cfg['experiment_mode']
 data_version = cfg['data_version']
 cfg['rootdir'] = root
 print("CONFIG")
