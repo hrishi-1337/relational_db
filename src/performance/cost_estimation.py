@@ -6,8 +6,6 @@ from definitions import root, BLOCKSIZE
 
 class CostEstimation:
     def blocks(self, tables):
-        # with open('config/config.yaml') as f:
-        #     data_version = yaml.safe_load(f)['data_version']
         data_version ='full'
         for t in tables:
             if 'compact' in t:

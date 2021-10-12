@@ -5,7 +5,7 @@ import pandas as pd
 from sys import exit
 import os, sys
 import pickle
-import resource
+# import resource
 
 from src.b_tree.b_tree import BTree
 

@@ -76,21 +76,3 @@ def execute_query(table, rows, where, where_clause):
                 print(f"Not running Indexed Scan because path index does not exists:")
                 print(idx_path)
 
-
-
-### ops
-### we can pass
-def lt(item1, item2):
-    if item1<item2:
-        return True
-    return False
-
-def  gt(item1, item2):
-    if item1>item2:
-        return True
-    return False
-
-def  eq(item1, item2):
-    if item1==item2:
-        return True
-    return False
