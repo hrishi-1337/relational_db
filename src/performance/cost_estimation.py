@@ -6,8 +6,6 @@ from definitions import root, BLOCKSIZE
 
 class CostEstimation:
     def blocks(self, tables):
-        # with open('config/config.yaml') as f:
-        #     data_version = yaml.safe_load(f)['data_version']
         data_version ='full'
         for t in tables:
             if 'compact' in t:
@@ -20,10 +18,10 @@ class CostEstimation:
             table_path = os.path.join(DB_PATH, table)
             blocks = len(os.listdir(table_path))
             block_count[table] = int(blocks)
-        return block_count, DB_PATH
+        return block_count, DB_PATH, data_version
 
     def cost(self, tables):
-        block_count, DB_PATH = self.blocks(tables)
+        block_count, DB_PATH, data_version = self.blocks(tables)
         df = pd.DataFrame(index=['Block Transfers:', 'Seeks:'], columns=['Nested Loop Join', 'Block Nested Loop Join', 'Indexed Loop Join'])
 
         last_block = pd.read_csv(DB_PATH + "/" + tables[0] + "/block" + str(block_count[tables[0]]-1) + ".csv")

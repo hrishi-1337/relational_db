@@ -93,8 +93,6 @@ def get_cols(tableL):
 
 def parse_query(q):
     ql = q.split(' ')
-    join = False
-    join_col = None
     where = False
     where_clause = {'cols': [], 'ops': [], 'vals': []}
     tables = get_tables_list()
@@ -123,102 +121,33 @@ def parse_query(q):
     if rows == ['*']:
         rows = table_cols
 
-    if 'join' in ql:
-        idx = ql.index('join')
-        if idx != 4:
-            print(colored('error:', 'red'), end=" ")
-            print('\'join\' needs to be the the 5th word in the query')
-            return
-        elif len(ql) == 5:
-            print(colored('error:', 'red'), end=" ")
-            print('table is missing after \'join\'')
-            return
-        elif ql[5] not in tables:
-            print(colored('error:', 'red'), end=" ")
-            print(f'the table \'{ql[5]}\' to join on is not on disk')
-            print_tables()
-            return
-        elif len(ql) == 6:
-            print(colored('error:', 'red'), end=" ")
-            print(f'need col to join on')
-            return
-        elif ql[6] != 'on':
-            print(colored('error:', 'red'), end=" ")
-            print(f'7th words needs to be \'on\'')
-            return
-        elif len(ql) == 7:
-            print(colored('error:', 'red'), end=" ")
-            print(f'need col to join on')
-            return
-        elif ql[6] != 'on':
-            print(colored('error:', 'red'), end=" ")
-            print(f'7th words needs to be \'on\'')
-            return
-        join_col = ql[7].replace("_", " ").replace("-", " ").split(",")
-        if join_col not in table_cols:
-            print(colored('error:', 'red'), end=" ")
-            print(f'join column {join_col} needs to be in both tables')
-            print("ROWS:")
-            for i in join_table_cols:
-                print(i)
-            return
-
-        join = ql[5]
-        join_table_cols = get_cols([join])
-        if join_col not in join_table_cols:
-            print(colored('error:', 'red'), end=" ")
-            print(f'join column {join_col} needs to be in both tables')
-            print("ROWS:")
-            for i in join_table_cols:
-                print(i)
-            return
-        table_cols += join_table_cols
     for r in rows:
         if r not in table_cols:
             print(colored('error:', 'red'), end=" ")
             print(f'{r} is not a column')
             return
     if 'where' in ql:
-        idx = ql.index('where')
-        if join and idx != 6:
+        w = ql[5:]
+        if len(w) % 3 != 0:
             print(colored('error:', 'red'), end=" ")
-            print('\'where\' need to be seventh word if there is a join')
+            print("where clause needs to be three words: <col> <op> <val>")
             return
-        elif not join and idx != 4:
+        elif not len(w):
             print(colored('error:', 'red'), end=" ")
-            print('\'where\' need to be fifth word if there is not a join')
+            print("where clause is empty")
             return
-        else:
-            if join:
-                w = ql[9:]
-            else:
-                w = ql[5:]
-            if len(w) % 3 != 0:
+        for i in range(0, len(w), 3):
+            where_clause['cols'].append(w[i])
+            where_clause['ops'].append(w[i + 1])
+            where_clause['vals'].append(w[i + 2])
+        for i in where_clause['ops']:
+            if i not in ['<', '>', '=']:
                 print(colored('error:', 'red'), end=" ")
-                print("where clause needs to be three words: <col> <op> <val>")
+                print(f"{i} should be any of <,>,=")
                 return
-            elif not len(w):
-                print(colored('error:', 'red'), end=" ")
-                print("where clause is empty")
-                return
-            for i in range(0, len(w), 3):
-                where_clause['cols'].append(w[i])
-                where_clause['ops'].append(w[i + 1])
-                where_clause['vals'].append(w[i + 2])
-            for i in where_clause['ops']:
-                if i not in ['<', '>', '=']:
-                    print(colored('error:', 'red'), end=" ")
-                    print(f"{i} should be any of <,>,=")
-                    return
+        where = True
 
-            # for i in where_clause['cols']:
-            #     if i not in ['<','>','=']:
-            #         print(colored('error:', 'red'),end=" ")
-            #         print(f"{i} should be any of <,>,=")
-            #         return
-            where = True
-
-    poss = ['select', 'from', 'join', 'on', 'where', join, join_col, ",".join(query_tables), ",".join(rows)] + where_clause['cols'] + \
+    poss = ['select', 'from', 'join', 'on', 'where', ",".join(query_tables), ",".join(rows)] + where_clause['cols'] + \
            where_clause['ops'] + where_clause['vals'] +["*"]
     for w in ql:
         if w not in poss:
