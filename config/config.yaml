@@ -7,6 +7,7 @@ data_version: develop
 indexes:
   athletes:
   - Athlete_ID
+  - NOC
   athletic_events:
   - Athlete_ID
 key: Athlete ID
